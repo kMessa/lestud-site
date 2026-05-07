@@ -1,0 +1,86 @@
+{
+  "hero": {
+    "eyebrow": "Le Stud",
+    "title": "Vos idées en image.",
+    "subtitle": "Studio audiovisuel indépendant en Occitanie",
+    "cta_primary": "Demander un devis",
+    "cta_secondary": "Voir le portfolio"
+  },
+  "services": {
+    "title": "Ce que je fais",
+    "subtitle": "Du tournage au montage, je vous aide à créer des images claires, soignées et adaptées à votre projet.",
+    "items": [
+      {
+        "num": "01",
+        "title": "Vidéo d'entreprise",
+        "description": "Présentez votre activité, votre équipe, votre lieu ou votre savoir-faire avec une vidéo claire, professionnelle et adaptée à vos supports."
+      },
+      {
+        "num": "02",
+        "title": "Clips & projets artistiques",
+        "description": "Clip musical, vidéo créative, teaser ou projet personnel : je vous accompagne dans la création d'images fortes, avec une vraie attention au rythme, au montage et à l'ambiance."
+      },
+      {
+        "num": "03",
+        "title": "Montage vidéo",
+        "description": "Vous avez déjà des images ? Je peux les organiser, les rythmer, les nettoyer et leur donner une vraie forme grâce au montage, à l'étalonnage et à l'habillage."
+      },
+      {
+        "num": "04",
+        "title": "Contenus réseaux sociaux",
+        "description": "Teasers, formats courts, reels, vidéos verticales, extraits dynamiques : je crée des contenus pensés pour capter l'attention sans sacrifier la qualité de l'image."
+      },
+      {
+        "num": "05",
+        "title": "Événements",
+        "description": "Captation vidéo et photo pour garder une trace propre d'un événement : concert, exposition, rencontre, inauguration, tournoi, soirée ou moment important."
+      },
+      {
+        "num": "06",
+        "title": "Identité visuelle simple",
+        "description": "Logo, carte de visite, visuel promotionnel ou jaquette : je peux aussi vous aider à poser une première identité visuelle claire et cohérente."
+      }
+    ]
+  },
+  "packs": {
+    "title": "Formules",
+    "items": [
+      {
+        "title": "Pack Essentiel",
+        "description": "Pour présenter une activité simplement : une vidéo courte, soignée, directement utilisable sur vos supports."
+      },
+      {
+        "title": "Pack Réseaux Sociaux",
+        "description": "Pour créer plusieurs contenus courts à partir d'une même session : reels, teasers, formats verticaux."
+      },
+      {
+        "title": "Pack Projet Complet",
+        "description": "Pour un clip, une vidéo d'entreprise, une interview ou un événement plus construit, du tournage à la livraison finale."
+      }
+    ],
+    "note": "Chaque projet est différent. Les prestations sont proposées sur devis, avec la possibilité de construire une formule adaptée à votre besoin, votre délai et votre budget."
+  },
+  "about": {
+    "title": "À propos",
+    "paragraphs": [
+      "Je suis passionné par l'image depuis toujours. J'aime raconter des histoires à travers ce qu'on voit, ce qu'on entend, ce qu'on ressent : du clip au court-métrage, de la vidéo d'entreprise au long-métrage, chaque projet est une nouvelle aventure.",
+      "Avec Le Stud, j'ai voulu créer un studio audiovisuel indépendant, accessible et humain, capable d'accompagner les entreprises, artistes, associations et indépendants dans leurs projets vidéo, photo et visuels.",
+      "Mon approche est simple : je m'investis dans chaque projet comme si c'était le mien. Je prends le temps de comprendre l'idée, le contexte et l'objectif, pour proposer des images qui servent vraiment le projet. Le projet passe avant l'ego : l'objectif est de trouver la meilleure forme possible pour votre idée, pas d'imposer une recette toute faite."
+    ],
+    "capabilities": [
+      { "highlight": "8+ ans", "text": "d'expérience, des clips aux projets institutionnels." },
+      { "highlight": "Panasonic GH5", "text": "+ Drone DJI Phantom 4." },
+      { "highlight": "Studio disponible", "text": "— fond blanc, noir ou vert." }
+    ]
+  },
+  "contact": {
+    "title": "Un projet en tête ?",
+    "subtitle": "Même si votre idée n'est pas encore complètement définie, présentez-la moi. Je vous répondrai avec une première orientation claire : format possible, méthode, délai et estimation.",
+    "email": "armeldali.pro@gmail.com",
+    "address": "Narbonne, Occitanie",
+    "siret": "524 497 021"
+  },
+  "footer": {
+    "copyright": "© 2026 Le Stud — Studio vidéo & photo en Occitanie. Tous droits réservés."
+  }
+}

@@ -36,12 +36,12 @@
   <section id="hero" class="parallax" style="background-image: url('https://picsum.photos/id/1062/1920/1080');">
     <div class="hero-overlay"></div>
     <div class="hero-content">
-      <span class="hero-eyebrow">Le Stud</span>
-      <h1>Vos idées en image.</h1>
-      <p>Studio audiovisuel indépendant en Occitanie</p>
+      <span class="hero-eyebrow" id="heroEyebrow">Le Stud</span>
+      <h1 id="heroTitle">Vos idées en image.</h1>
+      <p id="heroSubtitle">Studio audiovisuel indépendant en Occitanie</p>
       <div class="hero-ctas">
-        <a href="#contact" class="btn-primary">Demander un devis</a>
-        <a href="#portfolio" class="btn-secondary">Voir le portfolio</a>
+        <a href="#contact" class="btn-primary" id="heroCta1">Demander un devis</a>
+        <a href="#portfolio" class="btn-secondary" id="heroCta2">Voir le portfolio</a>
       </div>
     </div>
     <div class="scroll-indicator">
@@ -52,65 +52,18 @@
   <!-- SERVICES -->
   <section id="services" class="section section-light">
     <div class="container">
-      <h2 class="section-title reveal">Ce que je fais</h2>
-      <p class="section-subtitle reveal">Du tournage au montage, je vous aide à créer des images claires, soignées et adaptées à votre projet.</p>
-      <ol class="services-list reveal-stagger">
-        <li class="service-item">
-          <span class="service-num">01</span>
-          <h3>Vidéo d'entreprise</h3>
-          <p>Présentez votre activité, votre équipe, votre lieu ou votre savoir-faire avec une vidéo claire, professionnelle et adaptée à vos supports.</p>
-        </li>
-        <li class="service-item">
-          <span class="service-num">02</span>
-          <h3>Clips & projets artistiques</h3>
-          <p>Clip musical, vidéo créative, teaser ou projet personnel : je vous accompagne dans la création d'images fortes, avec une vraie attention au rythme, au montage et à l'ambiance.</p>
-        </li>
-        <li class="service-item">
-          <span class="service-num">03</span>
-          <h3>Montage vidéo</h3>
-          <p>Vous avez déjà des images ? Je peux les organiser, les rythmer, les nettoyer et leur donner une vraie forme grâce au montage, à l'étalonnage et à l'habillage.</p>
-        </li>
-        <li class="service-item">
-          <span class="service-num">04</span>
-          <h3>Contenus réseaux sociaux</h3>
-          <p>Teasers, formats courts, reels, vidéos verticales, extraits dynamiques : je crée des contenus pensés pour capter l'attention sans sacrifier la qualité de l'image.</p>
-        </li>
-        <li class="service-item">
-          <span class="service-num">05</span>
-          <h3>Événements</h3>
-          <p>Captation vidéo et photo pour garder une trace propre d'un événement : concert, exposition, rencontre, inauguration, tournoi, soirée ou moment important.</p>
-        </li>
-        <li class="service-item">
-          <span class="service-num">06</span>
-          <h3>Identité visuelle simple</h3>
-          <p>Logo, carte de visite, visuel promotionnel ou jaquette : je peux aussi vous aider à poser une première identité visuelle claire et cohérente.</p>
-        </li>
-      </ol>
+      <h2 class="section-title reveal" id="servicesTitle">Ce que je fais</h2>
+      <p class="section-subtitle reveal" id="servicesSubtitle">Du tournage au montage, je vous aide à créer des images claires, soignées et adaptées à votre projet.</p>
+      <ol class="services-list reveal-stagger" id="servicesList"></ol>
     </div>
   </section>
 
   <!-- PACKS -->
   <section id="packs" class="section section-dark">
     <div class="container">
-      <h2 class="section-title left reveal">Formules</h2>
-      <div class="packs-grid reveal-stagger">
-        <div class="pack-item">
-          <span class="pack-icon" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="13" rx="2"/><path d="M16 2l2 5H6l2-5h8z"/><circle cx="12" cy="13.5" r="2.5"/></svg></span>
-          <h3>Pack Essentiel</h3>
-          <p>Pour présenter une activité simplement : une vidéo courte, soignée, directement utilisable sur vos supports.</p>
-        </div>
-        <div class="pack-item">
-          <span class="pack-icon" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="7" y="2" width="10" height="20" rx="2"/><circle cx="12" cy="17.5" r="1" fill="currentColor" stroke="none"/></svg></span>
-          <h3>Pack Réseaux Sociaux</h3>
-          <p>Pour créer plusieurs contenus courts à partir d'une même session : reels, teasers, formats verticaux.</p>
-        </div>
-        <div class="pack-item">
-          <span class="pack-icon" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="5" width="20" height="14" rx="2"/><path d="M2 9h20M2 15h20M7 5v14M17 5v14"/></svg></span>
-          <h3>Pack Projet Complet</h3>
-          <p>Pour un clip, une vidéo d'entreprise, une interview ou un événement plus construit, du tournage à la livraison finale.</p>
-        </div>
-      </div>
-      <p class="pack-note">Chaque projet est différent. Les prestations sont proposées sur devis, avec la possibilité de construire une formule adaptée à votre besoin, votre délai et votre budget.</p>
+      <h2 class="section-title left reveal" id="packsTitle">Formules</h2>
+      <div class="packs-grid reveal-stagger" id="packsGrid"></div>
+      <p class="pack-note" id="packsNote">Chaque projet est différent. Les prestations sont proposées sur devis, avec la possibilité de construire une formule adaptée à votre besoin, votre délai et votre budget.</p>
     </div>
   </section>
 
@@ -137,15 +90,9 @@
           <img src="https://picsum.photos/id/338/700/800" alt="Armel Dali — Le Stud" />
         </div>
         <div class="about-text">
-          <h2 class="section-title left">À propos</h2>
-          <p>Je suis passionné par l'image depuis toujours. J'aime raconter des histoires à travers ce qu'on voit, ce qu'on entend, ce qu'on ressent : du clip au court-métrage, de la vidéo d'entreprise au long-métrage, chaque projet est une nouvelle aventure.</p>
-          <p>Avec Le Stud, j'ai voulu créer un studio audiovisuel indépendant, accessible et humain, capable d'accompagner les entreprises, artistes, associations et indépendants dans leurs projets vidéo, photo et visuels.</p>
-          <p>Mon approche est simple : je m'investis dans chaque projet comme si c'était le mien. Je prends le temps de comprendre l'idée, le contexte et l'objectif, pour proposer des images qui servent vraiment le projet. Le projet passe avant l'ego : l'objectif est de trouver la meilleure forme possible pour votre idée, pas d'imposer une recette toute faite.</p>
-          <ul class="about-caps">
-            <li><strong>8+ ans</strong> d'expérience, des clips aux projets institutionnels.</li>
-            <li><strong>Panasonic GH5</strong> + Drone DJI Phantom 4.</li>
-            <li>Studio disponible — fond blanc, noir ou vert.</li>
-          </ul>
+          <h2 class="section-title left" id="aboutTitle">À propos</h2>
+          <div id="aboutParagraphs"></div>
+          <ul class="about-caps" id="aboutCaps"></ul>
         </div>
       </div>
     </div>
@@ -154,8 +101,8 @@
   <!-- CONTACT -->
   <section id="contact" class="section section-dark">
     <div class="container">
-      <h2 class="section-title left reveal">Un projet en tête ?</h2>
-      <p class="section-subtitle left reveal">Même si votre idée n'est pas encore complètement définie, présentez-la moi. Je vous répondrai avec une première orientation claire : format possible, méthode, délai et estimation.</p>
+      <h2 class="section-title left reveal" id="contactTitle">Un projet en tête ?</h2>
+      <p class="section-subtitle left reveal" id="contactSubtitle">Même si votre idée n'est pas encore complètement définie, présentez-la moi. Je vous répondrai avec une première orientation claire : format possible, méthode, délai et estimation.</p>
       <div class="contact-grid reveal">
         <form class="contact-form" onsubmit="sendForm(event)">
           <div class="form-row">
@@ -217,11 +164,11 @@
         <div class="contact-info">
           <div class="contact-item">
             <strong>Email</strong>
-            <p class="contact-email">armeldali.pro@gmail.com</p>
+            <p class="contact-email" id="contactEmail">armeldali.pro@gmail.com</p>
           </div>
           <div class="contact-item">
             <strong>Adresse</strong>
-            <p>Narbonne, Occitanie</p>
+            <p id="contactAddress">Narbonne, Occitanie</p>
           </div>
           <div class="contact-item">
             <strong>Devis</strong>
@@ -229,7 +176,7 @@
           </div>
           <div class="contact-item">
             <strong>Structure</strong>
-            <p>Micro-entreprise<br/>N° 524 497 021</p>
+            <p>Micro-entreprise<br/><span id="contactSiret">N° 524 497 021</span></p>
           </div>
         </div>
       </div>
@@ -243,7 +190,7 @@
     <div class="container">
       <div class="footer-content">
         <span class="footer-logo">Le Stud</span>
-        <p>© 2026 Le Stud — Studio vidéo & photo en Occitanie. Tous droits réservés.</p>
+        <p id="footerCopyright">© 2026 Le Stud — Studio vidéo & photo en Occitanie. Tous droits réservés.</p>
         <p class="footer-mention"><a href="mailto:armeldali.pro@gmail.com">Contact</a> · Mentions légales disponibles sur demande</p>
       </div>
     </div>

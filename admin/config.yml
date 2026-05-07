@@ -8,6 +8,85 @@ media_folder: images
 public_folder: /images
 
 collections:
+
+  - name: contenu
+    label: Textes du site
+    files:
+
+      - label: Textes du site
+        name: site
+        file: data/content.json
+        fields:
+
+          - label: "Hero (bandeau principal)"
+            name: hero
+            widget: object
+            fields:
+              - { label: "Label au-dessus du titre", name: eyebrow, widget: string }
+              - { label: "Titre principal", name: title, widget: string }
+              - { label: "Sous-titre", name: subtitle, widget: string }
+              - { label: "Bouton principal", name: cta_primary, widget: string }
+              - { label: "Bouton secondaire", name: cta_secondary, widget: string }
+
+          - label: "Services (Ce que je fais)"
+            name: services
+            widget: object
+            fields:
+              - { label: "Titre de section", name: title, widget: string }
+              - { label: "Description", name: subtitle, widget: text }
+              - label: "Prestations"
+                name: items
+                widget: list
+                fields:
+                  - { label: "Numéro", name: num, widget: string }
+                  - { label: "Titre", name: title, widget: string }
+                  - { label: "Description", name: description, widget: text }
+
+          - label: "Formules (Packs)"
+            name: packs
+            widget: object
+            fields:
+              - { label: "Titre de section", name: title, widget: string }
+              - label: "Formules"
+                name: items
+                widget: list
+                fields:
+                  - { label: "Titre", name: title, widget: string }
+                  - { label: "Description", name: description, widget: text }
+              - { label: "Note de bas de section", name: note, widget: text }
+
+          - label: "À propos"
+            name: about
+            widget: object
+            fields:
+              - { label: "Titre", name: title, widget: string }
+              - label: "Paragraphes"
+                name: paragraphs
+                widget: list
+                field: { label: "Paragraphe", name: text, widget: text }
+              - label: "Points forts"
+                name: capabilities
+                widget: list
+                fields:
+                  - { label: "Mot en gras", name: highlight, widget: string }
+                  - { label: "Suite du texte", name: text, widget: string }
+
+          - label: "Contact"
+            name: contact
+            widget: object
+            fields:
+              - { label: "Titre", name: title, widget: string }
+              - { label: "Sous-titre", name: subtitle, widget: text }
+              - { label: "Email", name: email, widget: string }
+              - { label: "Ville / Région", name: address, widget: string }
+              - { label: "Numéro SIRET", name: siret, widget: string }
+
+          - label: "Pied de page"
+            name: footer
+            widget: object
+            fields:
+              - { label: "Texte copyright", name: copyright, widget: string }
+
   - name: portfolio
     label: Portfolio
     files:
@@ -23,4 +102,15 @@ collections:
               - { label: Titre, name: title, widget: string }
               - { label: Catégorie, name: tag, widget: string }
               - { label: Image, name: image, widget: image }
-              - { label: Texte alternatif (description), name: alt, widget: string }
+              - { label: "Texte alternatif (description)", name: alt, widget: string }
+
+  - name: apparence
+    label: Couleurs
+    files:
+      - label: Couleurs du site
+        name: theme
+        file: data/theme.json
+        fields:
+          - { label: "Couleur dorée (titres, accents)", name: accent_color, widget: color, allowInput: true }
+          - { label: "Couleur ambrée (liens actifs, numéros)", name: accent2_color, widget: color, allowInput: true }
+          - { label: "Fond section Services", name: services_bg_color, widget: color, allowInput: true }
