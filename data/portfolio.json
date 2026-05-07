@@ -1,0 +1,52 @@
+{
+  "items": [
+    {
+      "title": "Entre Nous",
+      "tag": "Long-métrage",
+      "image": "https://picsum.photos/id/500/900/600",
+      "alt": "Entre Nous — long-métrage"
+    },
+    {
+      "title": "CFA Montpellier",
+      "tag": "Événement / Institution",
+      "image": "https://picsum.photos/id/250/600/400",
+      "alt": "CFA Montpellier — événement institution"
+    },
+    {
+      "title": "Animodz",
+      "tag": "Animation logo",
+      "image": "https://picsum.photos/id/430/600/400",
+      "alt": "Animodz — animation logo"
+    },
+    {
+      "title": "Riders on the Storm",
+      "tag": "Étalonnage",
+      "image": "https://picsum.photos/id/453/900/600",
+      "alt": "Riders on the Storm — étalonnage skatepark"
+    },
+    {
+      "title": "3 DJs",
+      "tag": "Teaser / Réseaux sociaux",
+      "image": "https://picsum.photos/id/180/600/400",
+      "alt": "3 DJs — teaser événementiel"
+    },
+    {
+      "title": "Le Banquet / Kamtar",
+      "tag": "Clip musical",
+      "image": "https://picsum.photos/id/365/600/400",
+      "alt": "Le Banquet — clip musical"
+    },
+    {
+      "title": "Affiche Expo I",
+      "tag": "Affiche / Événement",
+      "image": "https://picsum.photos/id/667/600/400",
+      "alt": "Expo I — affiche événement local"
+    },
+    {
+      "title": "Logos & supports artisans",
+      "tag": "Identité visuelle",
+      "image": "https://picsum.photos/id/168/1800/600",
+      "alt": "Identité visuelle artisans"
+    }
+  ]
+}

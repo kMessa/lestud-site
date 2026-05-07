@@ -1,3 +1,32 @@
+// Portfolio — chargé depuis data/portfolio.json
+fetch('/data/portfolio.json')
+  .then(r => r.json())
+  .then(data => {
+    const grid = document.getElementById('portfolioGrid');
+    data.items.forEach((item, i) => {
+      const div = document.createElement('div');
+      div.className = 'portfolio-item' + (i === 0 ? ' portfolio-featured' : '');
+      div.innerHTML = `
+        <img src="${item.image}" alt="${item.alt}" loading="lazy" />
+        <div class="portfolio-overlay">
+          <span class="portfolio-tag">${item.tag}</span>
+          <h3>${item.title}</h3>
+        </div>`;
+      grid.appendChild(div);
+    });
+  });
+
+// Netlify Identity — redirige vers /admin après connexion
+if (window.netlifyIdentity) {
+  window.netlifyIdentity.on('init', user => {
+    if (!user) {
+      window.netlifyIdentity.on('login', () => {
+        document.location.href = '/admin/';
+      });
+    }
+  });
+}
+
 // Navbar scroll state
 const navbar = document.getElementById('navbar');
 window.addEventListener('scroll', () => {
