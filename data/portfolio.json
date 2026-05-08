@@ -2,51 +2,67 @@
   "items": [
     {
       "title": "Entre Nous",
-      "tag": "Long-métrage",
+      "tag": "Long-métrage indépendant",
+      "role": "Tournage · montage · post-production",
       "image": "https://picsum.photos/id/500/900/600",
-      "alt": "Entre Nous — long-métrage"
+      "alt": "Entre Nous — long-métrage",
+      "description": "Participation à un long-métrage indépendant, avec un travail autour du tournage, du montage et de la construction finale du film. Une expérience complète qui a renforcé mon rapport au récit, au rythme et à la précision du montage."
     },
     {
-      "title": "CFA Montpellier",
+      "title": "CFA Montpellier — Handball",
       "tag": "Événement / Institution",
+      "role": "Captation · montage",
       "image": "https://picsum.photos/id/250/600/400",
-      "alt": "CFA Montpellier — événement institution"
+      "alt": "CFA Montpellier — événement institution",
+      "description": "Réalisation de contenus autour d'un tournoi inter-régional organisé avec le CFA de Montpellier. L'objectif : capter l'énergie de l'événement, valoriser les participants et produire des images utiles à la communication de la structure."
     },
     {
       "title": "Animodz",
       "tag": "Animation logo",
+      "role": "Habillage visuel",
       "image": "https://picsum.photos/id/430/600/400",
-      "alt": "Animodz — animation logo"
+      "alt": "Animodz — animation logo",
+      "description": "Animation de logo pour Animodz. Un travail d'habillage visuel pensé pour donner plus de mouvement et d'impact à l'identité de la marque."
     },
     {
       "title": "Riders on the Storm",
-      "tag": "Étalonnage",
+      "tag": "Événement",
+      "role": "Étalonnage · colorimétrie",
       "image": "https://picsum.photos/id/453/900/600",
-      "alt": "Riders on the Storm — étalonnage skatepark"
+      "alt": "Riders on the Storm — étalonnage skatepark",
+      "description": "Travail d'étalonnage et de colorimétrie sur des images tournées lors de l'inauguration du skatepark de Narbonne. L'objectif : renforcer l'ambiance, l'énergie et l'identité visuelle du projet."
     },
     {
       "title": "3 DJs",
-      "tag": "Teaser / Réseaux sociaux",
+      "tag": "Teaser événementiel",
+      "role": "Montage · étalonnage · effets visuels",
       "image": "https://picsum.photos/id/180/600/400",
-      "alt": "3 DJs — teaser événementiel"
+      "alt": "3 DJs — teaser événementiel",
+      "description": "Montage, étalonnage et effets visuels pour une vidéo promotionnelle autour d'un collectif de DJs. Un projet pensé pour créer un rendu rythmé, dynamique et adapté à une diffusion en ligne."
     },
     {
-      "title": "Le Banquet / Kamtar",
-      "tag": "Clip musical",
+      "title": "Clips musicaux",
+      "tag": "Projet artistique",
+      "role": "Réalisation · montage · étalonnage",
       "image": "https://picsum.photos/id/365/600/400",
-      "alt": "Le Banquet — clip musical"
+      "alt": "Clips musicaux — réalisation et montage",
+      "description": "Création complète autour de projets musicaux : réalisation vidéo, montage, étalonnage et diffusion. Une approche artisanale et créative, menée avec une forte attention au rythme et à l'ambiance."
     },
     {
       "title": "Affiche Expo I",
-      "tag": "Affiche / Événement",
+      "tag": "Événement local",
+      "role": "Affiche · visuel promotionnel",
       "image": "https://picsum.photos/id/667/600/400",
-      "alt": "Expo I — affiche événement local"
+      "alt": "Expo I — affiche événement local",
+      "description": "Création de l'affiche d'une exposition organisée avec l'association Double King Production, dans le but de mettre en avant des artistes et artisans locaux."
     },
     {
       "title": "Logos & supports artisans",
       "tag": "Identité visuelle",
+      "role": "Logo · carte · support imprimé",
       "image": "https://picsum.photos/id/168/1800/600",
-      "alt": "Identité visuelle artisans"
+      "alt": "Identité visuelle artisans",
+      "description": "Création de supports visuels pour artisans : cartes, logos et visuels de présentation. Des projets concrets, pensés pour rendre une activité plus lisible et professionnelle."
     }
   ]
 }
