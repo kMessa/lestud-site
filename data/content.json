@@ -3,6 +3,7 @@
     "eyebrow": "Le Stud",
     "title": "Vos idées en image.",
     "subtitle": "Studio audiovisuel indépendant en Occitanie",
+    "description": "Vidéo, montage, photo, clips, événements et contenus courts pour les artistes, entreprises, associations et indépendants qui veulent mieux présenter leur projet.",
     "cta_primary": "Demander un devis",
     "cta_secondary": "Voir le portfolio"
   },
@@ -63,19 +64,19 @@
   "about": {
     "title": "À propos",
     "paragraphs": [
-      "Je suis passionné par l'image depuis toujours. J'aime raconter des histoires à travers ce qu'on voit, ce qu'on entend, ce qu'on ressent : du clip au court-métrage, de la vidéo d'entreprise au long-métrage, chaque projet est une nouvelle aventure.",
-      "Avec Le Stud, j'ai voulu créer un studio audiovisuel indépendant, accessible et humain, capable d'accompagner les entreprises, artistes, associations et indépendants dans leurs projets vidéo, photo et visuels.",
-      "Mon approche est simple : je m'investis dans chaque projet comme si c'était le mien. Je prends le temps de comprendre l'idée, le contexte et l'objectif, pour proposer des images qui servent vraiment le projet. Le projet passe avant l'ego : l'objectif est de trouver la meilleure forme possible pour votre idée, pas d'imposer une recette toute faite."
+      "Je suis passionné par l'image depuis toujours. Avec Le Stud, j'accompagne les entreprises, artistes, associations et indépendants dans la création de vidéos, photos et contenus visuels professionnels.",
+      "Mon approche est simple : comprendre votre idée, trouver la bonne forme, et créer des images qui servent vraiment votre projet. Ici, pas de discours d'agence ni de formule toute faite : chaque projet a son rythme, son intention et son public.",
+      "Chez Le Stud, le projet passe avant l'ego."
     ],
     "capabilities": [
-      { "highlight": "8+ ans", "text": "d'expérience, des clips aux projets institutionnels." },
+      { "highlight": "8+ ans", "text": "d'expérience, du long-métrage aux contenus courts pour structures locales." },
       { "highlight": "Panasonic GH5", "text": "+ Drone DJI Phantom 4." },
       { "highlight": "Studio disponible", "text": "— fond blanc, noir ou vert." }
     ]
   },
   "contact": {
-    "title": "Un projet en tête ?",
-    "subtitle": "Même si votre idée n'est pas encore complètement définie, présentez-la moi. Je vous répondrai avec une première orientation claire : format possible, méthode, délai et estimation.",
+    "title": "Parlez-moi de votre projet",
+    "subtitle": "Vous avez un projet vidéo, photo ou visuel ? Présentez-moi votre idée, même si elle n'est pas encore complètement définie. Je vous répondrai avec une première orientation claire : format possible, méthode, délai et estimation.",
     "email": "armeldali.pro@gmail.com",
     "address": "Narbonne, Occitanie",
     "siret": "524 497 021"

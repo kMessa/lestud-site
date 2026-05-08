@@ -21,11 +21,12 @@ Promise.all([
 
   // ── Hero ──────────────────────────────────────────────────────────────
   const h = content.hero;
-  document.getElementById('heroEyebrow').textContent  = h.eyebrow;
-  document.getElementById('heroTitle').textContent    = h.title;
-  document.getElementById('heroSubtitle').textContent = h.subtitle;
-  document.getElementById('heroCta1').textContent     = h.cta_primary;
-  document.getElementById('heroCta2').textContent     = h.cta_secondary;
+  document.getElementById('heroEyebrow').textContent      = h.eyebrow;
+  document.getElementById('heroTitle').textContent        = h.title;
+  document.getElementById('heroSubtitle').textContent     = h.subtitle;
+  document.getElementById('heroDescription').textContent  = h.description || '';
+  document.getElementById('heroCta1').textContent         = h.cta_primary;
+  document.getElementById('heroCta2').textContent         = h.cta_secondary;
 
   // ── Services ──────────────────────────────────────────────────────────
   const s = content.services;
@@ -94,6 +95,7 @@ Promise.all([
       <div class="portfolio-overlay">
         <span class="portfolio-tag">${item.tag}</span>
         <h3>${item.title}</h3>
+        ${item.role ? `<p class="portfolio-role">${item.role}</p>` : ''}
       </div>`;
     grid.appendChild(div);
   });
