@@ -142,7 +142,7 @@ const activeObserver = new IntersectionObserver((entries) => {
       });
     }
   });
-}, { threshold: 0.35 });
+}, { threshold: 0.2 });
 
 navSections.forEach(s => activeObserver.observe(s));
 
