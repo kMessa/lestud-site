@@ -1093,6 +1093,40 @@ a { text-decoration: none; color: inherit; }
   color: rgba(255,255,255,0.7);
 }
 
+.footer-local {
+  border-top: 1px solid rgba(255,255,255,0.07);
+  margin-top: 1.5rem;
+  padding-top: 1.5rem;
+  display: flex;
+  gap: 3rem;
+  flex-wrap: wrap;
+}
+
+.footer-local-col {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.footer-local-col strong {
+  font-size: 0.68rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.35);
+  margin-bottom: 0.2rem;
+}
+
+.footer-local-col a {
+  font-size: 0.78rem;
+  color: rgba(255,255,255,0.25);
+  text-decoration: none;
+  transition: color var(--transition);
+}
+
+.footer-local-col a:hover {
+  color: rgba(255,255,255,0.65);
+}
+
 /* ===========================
    RESPONSIVE
 =========================== */
