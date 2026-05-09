@@ -49,28 +49,28 @@
       "description": "Création complète autour de projets musicaux : réalisation vidéo, montage, étalonnage et diffusion. Une approche artisanale et créative, menée avec une forte attention au rythme et à l'ambiance."
     },
     {
-      "title": "Double King Production — Flyer",
-      "tag": "Graphisme événementiel",
-      "role": "Identité visuelle · support imprimé",
-      "image": "/images/graphisme-creation-visuelle-le-stud.webp",
-      "alt": "Flyer événement Double King Production Narbonne — création graphique Le Stud",
-      "description": "Création visuelle pour l'association Double King Production à Narbonne. Flyer promotionnel pour un événement culturel organisé par l'association, pensé pour une diffusion en ligne et en impression."
-    },
-    {
-      "title": "Narboclim — Carte de visite",
-      "tag": "Identité visuelle",
-      "role": "Graphisme · support imprimé",
-      "image": "/images/graphisme-carte-visite-narboclim-le-stud.webp",
-      "alt": "Carte de visite Narboclim Narbonne — création graphique par Le Stud",
-      "description": "Conception d'une carte de visite recto-verso pour Narboclim, entreprise narbonnaise spécialisée en climatisation. Design professionnel et épuré, adapté à l'identité de l'activité et pensé pour l'impression."
+      "title": "Affiche Expo I",
+      "tag": "Événement local",
+      "role": "Affiche · visuel promotionnel",
+      "image": "https://picsum.photos/id/667/600/400",
+      "alt": "Expo I — affiche événement local Double King Production Narbonne",
+      "description": "Création de l'affiche d'une exposition organisée avec l'association Double King Production, dans le but de mettre en avant des artistes et artisans locaux."
     },
     {
       "title": "Logos & supports artisans",
       "tag": "Identité visuelle",
       "role": "Logo · carte · support imprimé",
-      "image": "/images/graphisme-carte-visite-narboclim-recto-le-stud.webp",
+      "image": "https://picsum.photos/id/168/1800/600",
       "alt": "Création logo et cartes de visite artisans Narbonne — Le Stud graphisme",
       "description": "Création de supports visuels pour artisans et indépendants : cartes de visite, logos et visuels de présentation. Des projets concrets pour des clients à Narbonne et dans l'Aude, pensés pour rendre une activité plus lisible et professionnelle."
+    },
+    {
+      "title": "Narboclim — Carte de visite",
+      "tag": "Graphisme · identité visuelle",
+      "role": "Conception graphique · support imprimé",
+      "image": "/images/graphisme-carte-visite-narboclim-recto-le-stud.webp",
+      "alt": "Carte de visite Narboclim — création graphique identité visuelle Narbonne par Le Stud",
+      "description": "Conception de la carte de visite recto pour Narboclim, entreprise narbonnaise spécialisée en climatisation, plomberie et électricité. Design centré sur l'identité de marque : flocon, éclair, palette bleue et typographie affirmée."
     }
   ]
 }
