@@ -5,7 +5,7 @@
       "tag": "Long-métrage indépendant",
       "role": "Tournage · montage · post-production",
       "image": "https://picsum.photos/id/500/900/600",
-      "alt": "Entre Nous — long-métrage",
+      "alt": "Entre nous — long-métrage indépendant, tournage et montage par Le Stud Narbonne",
       "description": "Participation à un long-métrage indépendant, avec un travail autour du tournage, du montage et de la construction finale du film. Une expérience complète qui a renforcé mon rapport au récit, au rythme et à la précision du montage."
     },
     {
@@ -13,15 +13,15 @@
       "tag": "Événement / Institution",
       "role": "Captation · montage",
       "image": "https://picsum.photos/id/250/600/400",
-      "alt": "CFA Montpellier — événement institution",
-      "description": "Réalisation de contenus autour d'un tournoi inter-régional organisé avec le CFA de Montpellier. L'objectif : capter l'énergie de l'événement, valoriser les participants et produire des images utiles à la communication de la structure."
+      "alt": "Vidéo corporate tournoi de handball CFA Montpellier — captation et montage par Le Stud",
+      "description": "Réalisation de contenus autour d'un tournoi inter-régional organisé avec le CFA de Montpellier. Captation et montage pour mettre en valeur l'initiative sportive et produire des images utiles à la communication de la structure."
     },
     {
       "title": "Animodz",
       "tag": "Animation logo",
       "role": "Habillage visuel",
       "image": "https://picsum.photos/id/430/600/400",
-      "alt": "Animodz — animation logo",
+      "alt": "Animation de logo Animodz — motion design par Le Stud Narbonne",
       "description": "Animation de logo pour Animodz. Un travail d'habillage visuel pensé pour donner plus de mouvement et d'impact à l'identité de la marque."
     },
     {
@@ -29,7 +29,7 @@
       "tag": "Événement",
       "role": "Étalonnage · colorimétrie",
       "image": "https://picsum.photos/id/453/900/600",
-      "alt": "Riders on the Storm — étalonnage skatepark",
+      "alt": "Étalonnage vidéo inauguration skatepark de Narbonne — Le Stud",
       "description": "Travail d'étalonnage et de colorimétrie sur des images tournées lors de l'inauguration du skatepark de Narbonne. L'objectif : renforcer l'ambiance, l'énergie et l'identité visuelle du projet."
     },
     {
@@ -37,7 +37,7 @@
       "tag": "Teaser événementiel",
       "role": "Montage · étalonnage · effets visuels",
       "image": "https://picsum.photos/id/180/600/400",
-      "alt": "3 DJs — teaser événementiel",
+      "alt": "Teaser vidéo collectif de DJs — montage et effets visuels par Le Stud",
       "description": "Montage, étalonnage et effets visuels pour une vidéo promotionnelle autour d'un collectif de DJs. Un projet pensé pour créer un rendu rythmé, dynamique et adapté à une diffusion en ligne."
     },
     {
@@ -45,24 +45,32 @@
       "tag": "Projet artistique",
       "role": "Réalisation · montage · étalonnage",
       "image": "https://picsum.photos/id/365/600/400",
-      "alt": "Clips musicaux — réalisation et montage",
+      "alt": "Réalisation de clips musicaux — vidéaste Le Stud Narbonne",
       "description": "Création complète autour de projets musicaux : réalisation vidéo, montage, étalonnage et diffusion. Une approche artisanale et créative, menée avec une forte attention au rythme et à l'ambiance."
     },
     {
-      "title": "Affiche Expo I",
-      "tag": "Événement local",
-      "role": "Affiche · visuel promotionnel",
-      "image": "https://picsum.photos/id/667/600/400",
-      "alt": "Expo I — affiche événement local",
-      "description": "Création de l'affiche d'une exposition organisée avec l'association Double King Production, dans le but de mettre en avant des artistes et artisans locaux."
+      "title": "Double King Production — Flyer",
+      "tag": "Graphisme événementiel",
+      "role": "Identité visuelle · support imprimé",
+      "image": "/images/graphisme-creation-visuelle-le-stud.webp",
+      "alt": "Flyer événement Double King Production Narbonne — création graphique Le Stud",
+      "description": "Création visuelle pour l'association Double King Production à Narbonne. Flyer promotionnel pour un événement culturel organisé par l'association, pensé pour une diffusion en ligne et en impression."
+    },
+    {
+      "title": "Narboclim — Carte de visite",
+      "tag": "Identité visuelle",
+      "role": "Graphisme · support imprimé",
+      "image": "/images/graphisme-carte-visite-narboclim-le-stud.webp",
+      "alt": "Carte de visite Narboclim Narbonne — création graphique par Le Stud",
+      "description": "Conception d'une carte de visite recto-verso pour Narboclim, entreprise narbonnaise spécialisée en climatisation. Design professionnel et épuré, adapté à l'identité de l'activité et pensé pour l'impression."
     },
     {
       "title": "Logos & supports artisans",
       "tag": "Identité visuelle",
       "role": "Logo · carte · support imprimé",
-      "image": "https://picsum.photos/id/168/1800/600",
-      "alt": "Identité visuelle artisans",
-      "description": "Création de supports visuels pour artisans : cartes, logos et visuels de présentation. Des projets concrets, pensés pour rendre une activité plus lisible et professionnelle."
+      "image": "/images/graphisme-carte-visite-narboclim-recto-le-stud.webp",
+      "alt": "Création logo et cartes de visite artisans Narbonne — Le Stud graphisme",
+      "description": "Création de supports visuels pour artisans et indépendants : cartes de visite, logos et visuels de présentation. Des projets concrets pour des clients à Narbonne et dans l'Aude, pensés pour rendre une activité plus lisible et professionnelle."
     }
   ]
 }
