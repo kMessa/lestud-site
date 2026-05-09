@@ -162,6 +162,31 @@ document.querySelectorAll('.reveal, .reveal-stagger').forEach(el => {
   revealObserver.observe(el);
 });
 
+// ── Copy / right-click protection ────────────────────────────────────
+(function () {
+  const msgs = ['Bien essayé', 'non.', 'Pourquoi faire ?'];
+  let toastEl = null;
+  let hideTimer = null;
+
+  function showToast() {
+    if (!toastEl) {
+      toastEl = document.createElement('div');
+      toastEl.id = 'copy-toast';
+      document.body.appendChild(toastEl);
+    }
+    toastEl.textContent = msgs[Math.floor(Math.random() * msgs.length)];
+    toastEl.classList.add('visible');
+    clearTimeout(hideTimer);
+    hideTimer = setTimeout(() => toastEl.classList.remove('visible'), 1800);
+  }
+
+  document.addEventListener('contextmenu', e => { e.preventDefault(); showToast(); });
+  document.addEventListener('copy',        e => { e.preventDefault(); showToast(); });
+  document.addEventListener('cut',         e => { e.preventDefault(); showToast(); });
+  document.addEventListener('selectstart', e => e.preventDefault());
+  document.addEventListener('dragstart',   e => { e.preventDefault(); showToast(); });
+})();
+
 // ── Contact form — mailto ─────────────────────────────────────────────
 function sendForm(e) {
   e.preventDefault();
