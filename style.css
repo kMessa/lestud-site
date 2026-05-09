@@ -858,6 +858,40 @@ a { text-decoration: none; color: inherit; }
 }
 
 /* ===========================
+   FAQ
+=========================== */
+.faq-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  margin-top: 2.5rem;
+}
+
+.faq-item {
+  border-top: 1px solid rgba(255,255,255,0.08);
+  padding: 1.6rem 0;
+}
+
+.faq-item:last-child {
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+}
+
+.faq-item h3 {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--white);
+  margin-bottom: 0.6rem;
+  letter-spacing: 0.01em;
+}
+
+.faq-item p {
+  font-size: 0.9rem;
+  color: rgba(255,255,255,0.6);
+  line-height: 1.7;
+  max-width: 680px;
+}
+
+/* ===========================
    COPY TOAST
 =========================== */
 #copy-toast {
