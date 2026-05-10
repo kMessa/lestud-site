@@ -88,16 +88,22 @@ Promise.all([
   // ── Portfolio ─────────────────────────────────────────────────────────
   const grid = document.getElementById('portfolioGrid');
   portfolio.items.forEach((item, i) => {
-    const div = document.createElement('div');
-    div.className = 'portfolio-item' + (i === 0 ? ' portfolio-featured' : '');
-    div.innerHTML = `
+    const el = item.link ? document.createElement('a') : document.createElement('div');
+    if (item.link) {
+      el.href = item.link;
+      el.target = '_blank';
+      el.rel = 'noopener noreferrer';
+    }
+    el.className = 'portfolio-item' + (i === 0 ? ' portfolio-featured' : '');
+    el.innerHTML = `
       <img src="${item.image}" alt="${item.alt}" loading="lazy" />
       <div class="portfolio-overlay">
         <span class="portfolio-tag">${item.tag}</span>
         <h3>${item.title}</h3>
         ${item.role ? `<p class="portfolio-role">${item.role}</p>` : ''}
+        ${item.link ? `<span class="portfolio-link-hint">▶ Voir la vidéo</span>` : ''}
       </div>`;
-    grid.appendChild(div);
+    grid.appendChild(el);
   });
 
 }).catch(err => console.error('Erreur chargement contenu :', err));
