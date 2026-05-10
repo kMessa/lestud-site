@@ -101,8 +101,11 @@ collections:
             fields:
               - { label: Titre, name: title, widget: string }
               - { label: Catégorie, name: tag, widget: string }
+              - { label: Rôle / prestation, name: role, widget: string, required: false }
               - { label: Image, name: image, widget: image }
-              - { label: "Texte alternatif (description)", name: alt, widget: string }
+              - { label: "Texte alternatif (SEO)", name: alt, widget: string }
+              - { label: "Lien externe (YouTube, Vimeo…)", name: link, widget: string, required: false }
+              - { label: Description, name: description, widget: text, required: false }
 
   - name: apparence
     label: Couleurs
