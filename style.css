@@ -512,32 +512,32 @@ a { text-decoration: none; color: inherit; }
 
 /* Services — soft sage tint, friendly and calm */
 #services {
-  background: oklch(93.5% 0.016 148);
-  color: oklch(9% 0.007 70);
+  background: oklch(14% 0.018 65);
+  color: var(--white);
 }
 
 #services .section-subtitle {
-  color: oklch(38% 0.01 148);
+  color: oklch(65% 0.008 70);
 }
 
 #services .services-list {
-  border-top-color: oklch(40% 0.06 148 / 0.15);
+  border-top-color: oklch(30% 0.01 70 / 0.4);
 }
 
 #services .service-item {
-  border-bottom-color: oklch(40% 0.06 148 / 0.15);
+  border-bottom-color: oklch(30% 0.01 70 / 0.4);
 }
 
 #services .service-num {
-  color: oklch(42% 0.1 148);
+  color: var(--accent);
 }
 
 #services .service-item h3 {
-  color: oklch(9% 0.007 70);
+  color: var(--white);
 }
 
 #services .service-item p {
-  color: oklch(32% 0.01 148);
+  color: oklch(65% 0.008 70);
 }
 
 /* ===========================
