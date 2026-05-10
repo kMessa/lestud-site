@@ -88,9 +88,10 @@ Promise.all([
   // ── Portfolio ─────────────────────────────────────────────────────────
   const grid = document.getElementById('portfolioGrid');
   document.getElementById('portfolioSpinner')?.remove();
-  portfolio.items.forEach((item, i) => {
+
+  const renderItem = (item, i, featured) => {
     const el = document.createElement('a');
-    el.className = 'portfolio-item' + (i === 0 ? ' portfolio-featured' : '');
+    el.className = 'portfolio-item' + (featured ? ' portfolio-featured' : '');
     if (item.link) {
       el.href = item.link;
       el.target = '_blank';
@@ -103,10 +104,36 @@ Promise.all([
         <span class="portfolio-tag">${item.tag}</span>
         <h3>${item.title}</h3>
         ${item.role ? `<p class="portfolio-role">${item.role}</p>` : ''}
-        ${item.link ? `<span class="portfolio-link-hint">▶ Voir la vidéo</span>` : ''}
+        ${item.link ? `<span class="portfolio-link-hint">▶ Voir</span>` : ''}
       </div>`;
-    grid.appendChild(el);
+    return el;
+  };
+
+  portfolio.items.forEach((item, i) => {
+    grid.appendChild(renderItem(item, i, i === 0));
   });
+
+  if (portfolio.graphisme?.length) {
+    const container = grid.closest('.container');
+
+    const toggle = document.createElement('button');
+    toggle.className = 'portfolio-graphisme-toggle';
+    toggle.setAttribute('aria-expanded', 'false');
+    toggle.innerHTML = `Graphisme & identité visuelle <span class="portfolio-graphisme-count">(${portfolio.graphisme.length})</span><span class="portfolio-graphisme-arrow" aria-hidden="true">▼</span>`;
+
+    const graphismeGrid = document.createElement('div');
+    graphismeGrid.className = 'portfolio-grid portfolio-graphisme-grid';
+    portfolio.graphisme.forEach((item) => graphismeGrid.appendChild(renderItem(item, 0, false)));
+
+    toggle.addEventListener('click', () => {
+      const open = graphismeGrid.classList.toggle('open');
+      toggle.classList.toggle('open', open);
+      toggle.setAttribute('aria-expanded', open);
+    });
+
+    container.appendChild(toggle);
+    container.appendChild(graphismeGrid);
+  }
 
 }).catch(err => console.error('Erreur chargement contenu :', err));
 
