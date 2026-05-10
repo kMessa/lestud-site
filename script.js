@@ -87,6 +87,7 @@ Promise.all([
 
   // ── Portfolio ─────────────────────────────────────────────────────────
   const grid = document.getElementById('portfolioGrid');
+  document.getElementById('portfolioSpinner')?.remove();
   portfolio.items.forEach((item, i) => {
     const el = document.createElement('div');
     el.className = 'portfolio-item' + (i === 0 ? ' portfolio-featured' : '');
