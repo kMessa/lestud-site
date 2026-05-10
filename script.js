@@ -123,7 +123,19 @@ Promise.all([
 
     const graphismeGrid = document.createElement('div');
     graphismeGrid.className = 'portfolio-grid portfolio-graphisme-grid';
-    portfolio.graphisme.forEach((item) => graphismeGrid.appendChild(renderItem(item, 0, false)));
+    portfolio.graphisme.forEach((item) => {
+      const wrap = document.createElement('div');
+      wrap.className = 'portfolio-graphisme-wrap';
+      const caption = document.createElement('div');
+      caption.className = 'portfolio-graphisme-caption';
+      caption.innerHTML = `
+        <span class="portfolio-tag">${item.tag}</span>
+        <h3>${item.title}</h3>
+        ${item.role ? `<p class="portfolio-role">${item.role}</p>` : ''}`;
+      wrap.appendChild(caption);
+      wrap.appendChild(renderItem(item, 0, false));
+      graphismeGrid.appendChild(wrap);
+    });
 
     toggle.addEventListener('click', () => {
       const open = graphismeGrid.classList.toggle('open');

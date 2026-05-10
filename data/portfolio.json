@@ -39,28 +39,12 @@
   ],
   "graphisme": [
     {
-      "title": "Affiche L'Expo #1",
-      "tag": "Graphisme événementiel",
-      "role": "Création affiche · identité visuelle",
-      "image": "/images/graphisme-affiche-expo-double-king-production-le-stud.webp",
-      "alt": "Affiche L'Expo #1 Double King Production Roubia — création graphique Le Stud",
-      "description": "Création de l'affiche de L'Expo #1, organisée par l'association Double King Production à Roubia. Un événement rassemblant artistes et artisans : photos, vidéos, peintures, street art, tatouages, ateliers découverte."
-    },
-    {
       "title": "Logo SOSA",
       "tag": "Identité visuelle",
       "role": "Création logo · déclinaisons",
       "image": "/images/graphisme-logo-sosa-entretien-narbonne-le-stud.webp",
       "alt": "Logo SOSA L'Entretien Durable Narbonne — création identité visuelle par Le Stud",
       "description": "Conception du logo de SOSA, entreprise d'entretien durable basée dans le Grand Narbonne. Déclinaisons couleur, noir et blanc, et version simplifiée pour tous les supports — impression, numérique, signalétique."
-    },
-    {
-      "title": "Flyer SOSA",
-      "tag": "Graphisme",
-      "role": "Flyer · support communication",
-      "image": "/images/graphisme-flyer-sosa-entretien-narbonne-le-stud.webp",
-      "alt": "Flyer SOSA L'Entretien Durable Narbonne — création graphique par Le Stud",
-      "description": "Création du flyer de présentation des services de SOSA — entreprise d'entretien, ménage et espaces verts dans le Grand Narbonne. Design lisible et professionnel, pensé pour la distribution locale."
     },
     {
       "title": "Logo Double King Production",
