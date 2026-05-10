@@ -90,13 +90,19 @@ Promise.all([
   portfolio.items.forEach((item, i) => {
     const div = document.createElement('div');
     div.className = 'portfolio-item' + (i === 0 ? ' portfolio-featured' : '');
-    div.innerHTML = `
+    const inner = `
       <img src="${item.image}" alt="${item.alt}" loading="lazy" />
       <div class="portfolio-overlay">
         <span class="portfolio-tag">${item.tag}</span>
         <h3>${item.title}</h3>
         ${item.role ? `<p class="portfolio-role">${item.role}</p>` : ''}
+        ${item.link ? `<span class="portfolio-watch">▶ Voir le clip</span>` : ''}
       </div>`;
+    if (item.link) {
+      div.innerHTML = `<a href="${item.link}" target="_blank" rel="noopener noreferrer" aria-label="Voir ${item.title}">${inner}</a>`;
+    } else {
+      div.innerHTML = inner;
+    }
     grid.appendChild(div);
   });
 
