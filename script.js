@@ -89,9 +89,14 @@ Promise.all([
   const grid = document.getElementById('portfolioGrid');
   document.getElementById('portfolioSpinner')?.remove();
   portfolio.items.forEach((item, i) => {
-    const el = document.createElement('div');
+    const el = document.createElement('a');
     el.className = 'portfolio-item' + (i === 0 ? ' portfolio-featured' : '');
-    if (item.link) el.classList.add('portfolio-item--linked');
+    if (item.link) {
+      el.href = item.link;
+      el.target = '_blank';
+      el.rel = 'noopener noreferrer';
+      el.classList.add('portfolio-item--linked');
+    }
     el.innerHTML = `
       <img src="${item.image}" alt="${item.alt}" loading="lazy" />
       <div class="portfolio-overlay">
@@ -100,9 +105,6 @@ Promise.all([
         ${item.role ? `<p class="portfolio-role">${item.role}</p>` : ''}
         ${item.link ? `<span class="portfolio-link-hint">▶ Voir la vidéo</span>` : ''}
       </div>`;
-    if (item.link) {
-      el.addEventListener('click', () => window.open(item.link, '_blank', 'noopener,noreferrer'));
-    }
     grid.appendChild(el);
   });
 
