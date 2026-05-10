@@ -89,12 +89,13 @@
       "description": "Travail d'étalonnage et de colorimétrie sur des images tournées lors de l'inauguration du skatepark de Narbonne. L'objectif : renforcer l'ambiance, l'énergie et l'identité visuelle du projet."
     },
     {
-      "title": "Clips musicaux",
-      "tag": "Projet artistique",
-      "role": "Réalisation · montage · étalonnage",
-      "image": "https://picsum.photos/id/365/600/400",
-      "alt": "Réalisation de clips musicaux — vidéaste Le Stud Narbonne",
-      "description": "Création complète autour de projets musicaux : réalisation vidéo, montage, étalonnage et diffusion. Une approche artisanale et créative, menée avec une forte attention au rythme et à l'ambiance."
+      "title": "Je glisse — Goulamas'k",
+      "tag": "Clip musical",
+      "role": "Écriture · mise en scène",
+      "image": "/images/clip-je-glisse-goulamask-ecriture-mise-en-scene-le-stud.png",
+      "alt": "Clip musical Je glisse Goulamas'k — écriture et mise en scène Le Stud",
+      "description": "Participation à l'écriture et à la mise en scène du clip « Je glisse » du groupe Goulamas'k. Un travail artistique collaboratif entre réalisation visuelle et direction de la narration.",
+      "link": "https://youtu.be/Dr5AWwTwX10?is=eNiu_fBZHyrSSzck"
     }
   ]
 }
