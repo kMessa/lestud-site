@@ -12,6 +12,7 @@
 - Format cible : **WebP** pour toutes les images du portfolio et du site
 - Conversion PNG/JPEG → WebP avec Pillow (qualité 88, method 6) avant tout commit
 - Nommage SEO : `sujet-lieu-contexte-le-stud.webp` (minuscules, tirets, pas d'accents, suffixe `-le-stud`)
+- **Ne jamais écraser un fichier image existant** — les images sont cachées `immutable` (1 an). Remplacer une image = nouveau nom de fichier obligatoire pour forcer le rechargement
 - Toujours mettre à jour les références JSON/HTML après renommage ou conversion
 
 ## Portfolio (`data/portfolio.json`)
