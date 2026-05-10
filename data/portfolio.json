@@ -19,6 +19,26 @@
       "link": "https://youtu.be/5w8Wip4YW90?is=tcztWS45WQuY_8-t"
     },
     {
+      "title": "Clip DJ — Platines",
+      "tag": "Clip musical",
+      "role": "Réalisation · montage",
+      "image": "/images/clip-dj-platines-mix-realisation-montage-le-stud.webp",
+      "alt": "Clip musical DJ platines et mix — réalisation et montage par Le Stud",
+      "description": "Réalisation et montage d'un clip pour un collectif de trois DJs. Univers sombre et cinématographique, centré sur les platines, le mouvement des mains et l'énergie du mix. Du cadrage serré à l'ambiance lumière, un projet construit autour de l'identité sonore du groupe.",
+      "link": "https://youtu.be/MNOMZzwO_gI?is=qQLNGdyC9h-L8ovR"
+    },
+    {
+      "title": "Je glisse — Goulamas'k",
+      "tag": "Clip musical",
+      "role": "Écriture · mise en scène",
+      "image": "/images/clip-je-glisse-goulamask-ecriture-mise-en-scene-le-stud.webp",
+      "alt": "Clip musical Je glisse Goulamas'k — écriture et mise en scène Le Stud",
+      "description": "Participation à l'écriture et à la mise en scène du clip « Je glisse » du groupe Goulamas'k. Un travail artistique collaboratif entre réalisation visuelle et direction de la narration.",
+      "link": "https://youtu.be/Dr5AWwTwX10?is=eNiu_fBZHyrSSzck"
+    }
+  ],
+  "graphisme": [
+    {
       "title": "Affiche L'Expo #1",
       "tag": "Graphisme événementiel",
       "role": "Création affiche · identité visuelle",
@@ -73,24 +93,6 @@
       "image": "/images/graphisme-carte-visite-narboclim-recto-le-stud.webp",
       "alt": "Carte de visite Narboclim climatisation plomberie Narbonne — création par Le Stud",
       "description": "Conception de la carte de visite pour Narboclim, entreprise narbonnaise spécialisée en climatisation, plomberie et électricité. Design centré sur l'identité de marque : flocon, éclair, palette bleue et typographie affirmée."
-    },
-    {
-      "title": "Clip DJ — Platines",
-      "tag": "Clip musical",
-      "role": "Réalisation · montage",
-      "image": "/images/clip-dj-platines-mix-realisation-montage-le-stud.webp",
-      "alt": "Clip musical DJ platines et mix — réalisation et montage par Le Stud",
-      "description": "Réalisation et montage d'un clip pour un collectif de trois DJs. Univers sombre et cinématographique, centré sur les platines, le mouvement des mains et l'énergie du mix. Du cadrage serré à l'ambiance lumière, un projet construit autour de l'identité sonore du groupe.",
-      "link": "https://youtu.be/MNOMZzwO_gI?is=qQLNGdyC9h-L8ovR"
-    },
-    {
-      "title": "Je glisse — Goulamas'k",
-      "tag": "Clip musical",
-      "role": "Écriture · mise en scène",
-      "image": "/images/clip-je-glisse-goulamask-ecriture-mise-en-scene-le-stud.webp",
-      "alt": "Clip musical Je glisse Goulamas'k — écriture et mise en scène Le Stud",
-      "description": "Participation à l'écriture et à la mise en scène du clip « Je glisse » du groupe Goulamas'k. Un travail artistique collaboratif entre réalisation visuelle et direction de la narration.",
-      "link": "https://youtu.be/Dr5AWwTwX10?is=eNiu_fBZHyrSSzck"
     }
   ]
 }
