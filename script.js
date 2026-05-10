@@ -88,13 +88,9 @@ Promise.all([
   // ── Portfolio ─────────────────────────────────────────────────────────
   const grid = document.getElementById('portfolioGrid');
   portfolio.items.forEach((item, i) => {
-    const el = item.link ? document.createElement('a') : document.createElement('div');
-    if (item.link) {
-      el.href = item.link;
-      el.target = '_blank';
-      el.rel = 'noopener noreferrer';
-    }
+    const el = document.createElement('div');
     el.className = 'portfolio-item' + (i === 0 ? ' portfolio-featured' : '');
+    if (item.link) el.classList.add('portfolio-item--linked');
     el.innerHTML = `
       <img src="${item.image}" alt="${item.alt}" loading="lazy" />
       <div class="portfolio-overlay">
@@ -103,6 +99,9 @@ Promise.all([
         ${item.role ? `<p class="portfolio-role">${item.role}</p>` : ''}
         ${item.link ? `<span class="portfolio-link-hint">▶ Voir la vidéo</span>` : ''}
       </div>`;
+    if (item.link) {
+      el.addEventListener('click', () => window.open(item.link, '_blank', 'noopener,noreferrer'));
+    }
     grid.appendChild(el);
   });
 
