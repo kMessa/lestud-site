@@ -1,7 +1,15 @@
 {
   "items": [
     {
-      "title": "Entre Nous",
+      "title": "Entre Nous — Captation aérienne",
+      "tag": "Long-métrage · drone",
+      "role": "Télépilote drone",
+      "image": "/images/drone-captation-aerienne-film-entre-nous-le-stud.webp",
+      "alt": "Captation aérienne drone film Entre Nous long-métrage indépendant — Le Stud",
+      "description": "Captation aérienne au drone pour le long-métrage indépendant Entre Nous. Plans en vol, cadrages en hauteur et perspectives aériennes réalisés en tant que télépilote sur le tournage.",
+      "link": "https://youtu.be/fd8YeijD1lo"
+    },
+    {
       "tag": "Long-métrage indépendant",
       "role": "Montage · post-production",
       "image": "/images/video-long-metrage-entre-nous-montage-le-stud.webp",
