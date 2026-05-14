@@ -16,7 +16,6 @@ Promise.all([
   const root = document.documentElement;
   root.style.setProperty('--accent',  theme.accent_color);
   root.style.setProperty('--accent2', theme.accent2_color);
-  // Services background
   document.getElementById('services').style.background = theme.services_bg_color;
 
   // ── Hero ──────────────────────────────────────────────────────────────
@@ -86,66 +85,77 @@ Promise.all([
   document.getElementById('footerCopyright').textContent = content.footer.copyright;
 
   // ── Portfolio ─────────────────────────────────────────────────────────
-  const grid = document.getElementById('portfolioGrid');
-  document.getElementById('portfolioSpinner')?.remove();
+  const videoItems     = portfolio.items.filter(i => i.category === 'video');
+  const graphismeItems = portfolio.items.filter(i => i.category === 'graphisme');
 
-  const renderItem = (item, i, featured) => {
-    const el = document.createElement('a');
-    el.className = 'portfolio-item' + (featured ? ' portfolio-featured' : '');
-    if (item.link) {
-      el.href = item.link;
-      el.target = '_blank';
-      el.rel = 'noopener noreferrer';
-      el.classList.add('portfolio-item--linked');
-    }
-    el.innerHTML = `
-      <img src="${item.image}" alt="${item.alt}" loading="lazy" />
-      <div class="portfolio-overlay">
-        <span class="portfolio-tag">${item.tag}</span>
-        <h3>${item.title}</h3>
-        ${item.role ? `<p class="portfolio-role">${item.role}</p>` : ''}
-        ${item.link ? `<span class="portfolio-link-hint">▶ Voir</span>` : ''}
+  // Tirage aléatoire vidéo — une seule fois au chargement
+  const featuredVideo = videoItems[Math.floor(Math.random() * videoItems.length)];
+
+  function renderFeaturedVideo(item) {
+    const click  = item.link ? ` style="cursor:pointer" onclick="window.open('${item.link}','_blank','noopener,noreferrer')"` : '';
+    const hint   = item.link ? `<span class="portfolio-link-hint">↗ Voir le projet</span>` : '';
+    return `
+      <div class="portfolio-featured-card"${click}>
+        <img src="${item.image}" alt="${item.alt}" loading="lazy" draggable="false" />
+        <div class="portfolio-featured-overlay">
+          <span class="portfolio-tag">${item.tag}</span>
+          <h4>${item.title}</h4>
+          ${item.role ? `<p class="portfolio-role">${item.role}</p>` : ''}
+          <p class="portfolio-desc">${item.description}</p>
+          ${hint}
+        </div>
       </div>`;
-    return el;
-  };
+  }
 
-  portfolio.items.forEach((item, i) => {
-    grid.appendChild(renderItem(item, i, i === 0));
+  // Encart graphisme : mosaïque 2×2 — remplacer src par l'image générique quand disponible
+  // Pour utiliser une image unique : remplacer le div.graphisme-mosaic par un <img src="...">
+  function renderFeaturedGraphisme() {
+    const mosaicImgs = graphismeItems.slice(0, 4).map(item =>
+      `<img src="${item.image}" alt="${item.alt}" loading="lazy" draggable="false" />`
+    ).join('');
+    return `
+      <div class="portfolio-featured-card">
+        <div class="graphisme-mosaic">${mosaicImgs}</div>
+        <div class="portfolio-featured-overlay">
+          <span class="portfolio-tag">Identité visuelle &amp; supports graphiques</span>
+          <h4>Graphisme</h4>
+          <p class="portfolio-desc">Logos, identités visuelles, cartes de visite et créations graphiques pour artisans, associations et entreprises en Occitanie.</p>
+        </div>
+      </div>`;
+  }
+
+  function renderGridItem(item) {
+    const cls  = item.link ? 'portfolio-item portfolio-item--linked' : 'portfolio-item';
+    const click = item.link ? ` onclick="window.open('${item.link}','_blank','noopener,noreferrer')"` : '';
+    const hint  = item.link ? `<span class="portfolio-link-hint">↗ Voir</span>` : '';
+    return `
+      <div class="${cls}"${click}>
+        <img src="${item.image}" alt="${item.alt}" loading="lazy" draggable="false" />
+        <div class="portfolio-overlay">
+          <span class="portfolio-tag">${item.tag}</span>
+          <h3>${item.title}</h3>
+          ${item.role ? `<p class="portfolio-role">${item.role}</p>` : ''}
+          <p class="portfolio-desc-small">${item.description}</p>
+          ${hint}
+        </div>
+      </div>`;
+  }
+
+  // Encarts principaux
+  document.getElementById('videoFeatured').innerHTML      = renderFeaturedVideo(featuredVideo);
+  document.getElementById('graphismeFeatured').innerHTML  = renderFeaturedGraphisme();
+
+  // Accordéon vidéo — tous les projets vidéo
+  const videoGrid = document.getElementById('videoGrid');
+  videoItems.forEach(item => {
+    videoGrid.insertAdjacentHTML('beforeend', renderGridItem(item));
   });
 
-  if (portfolio.graphisme?.length) {
-    const container = grid.closest('.container');
-
-    const toggle = document.createElement('button');
-    toggle.className = 'portfolio-graphisme-toggle';
-    toggle.setAttribute('aria-expanded', 'false');
-    toggle.innerHTML = `Graphisme & identité visuelle <span class="portfolio-graphisme-count">(${portfolio.graphisme.length})</span><span class="portfolio-graphisme-arrow" aria-hidden="true">▼</span>`;
-
-    const graphismeGrid = document.createElement('div');
-    graphismeGrid.className = 'portfolio-grid portfolio-graphisme-grid';
-    portfolio.graphisme.forEach((item) => {
-      const wrap = document.createElement('div');
-      wrap.className = 'portfolio-graphisme-wrap';
-      const caption = document.createElement('div');
-      caption.className = 'portfolio-graphisme-caption';
-      caption.innerHTML = `
-        <span class="portfolio-tag">${item.tag}</span>
-        <h3>${item.title}</h3>
-        ${item.role ? `<p class="portfolio-role">${item.role}</p>` : ''}`;
-      wrap.appendChild(caption);
-      wrap.appendChild(renderItem(item, 0, false));
-      graphismeGrid.appendChild(wrap);
-    });
-
-    toggle.addEventListener('click', () => {
-      const open = graphismeGrid.classList.toggle('open');
-      toggle.classList.toggle('open', open);
-      toggle.setAttribute('aria-expanded', open);
-    });
-
-    container.appendChild(toggle);
-    container.appendChild(graphismeGrid);
-  }
+  // Accordéon graphisme — tous les projets graphisme
+  const graphismeGrid = document.getElementById('graphismeGrid');
+  graphismeItems.forEach(item => {
+    graphismeGrid.insertAdjacentHTML('beforeend', renderGridItem(item));
+  });
 
 }).catch(err => console.error('Erreur chargement contenu :', err));
 
@@ -209,10 +219,22 @@ document.querySelectorAll('.reveal, .reveal-stagger').forEach(el => {
   revealObserver.observe(el);
 });
 
-// ── Copy / right-click protection ────────────────────────────────────
+// ── Accordéons portfolio ───────────────────────────────────────────────
+document.addEventListener('click', e => {
+  const btn = e.target.closest('.accordion-btn');
+  if (!btn) return;
+  const panel  = document.getElementById(btn.dataset.target);
+  if (!panel) return;
+  const isOpen = btn.getAttribute('aria-expanded') === 'true';
+  btn.setAttribute('aria-expanded', String(!isOpen));
+  btn.textContent = isOpen ? 'Voir plus' : 'Voir moins';
+  panel.hidden = isOpen;
+});
+
+// ── Protection images uniquement ──────────────────────────────────────
 (function () {
   const msgs = ['Bien essayé', 'non.', 'Pourquoi faire ?'];
-  let toastEl = null;
+  let toastEl  = null;
   let hideTimer = null;
 
   function showToast() {
@@ -227,11 +249,26 @@ document.querySelectorAll('.reveal, .reveal-stagger').forEach(el => {
     hideTimer = setTimeout(() => toastEl.classList.remove('visible'), 1800);
   }
 
-  document.addEventListener('contextmenu', e => { e.preventDefault(); showToast(); });
-  document.addEventListener('copy',        e => { e.preventDefault(); showToast(); });
-  document.addEventListener('cut',         e => { e.preventDefault(); showToast(); });
-  document.addEventListener('selectstart', e => e.preventDefault());
-  document.addEventListener('dragstart',   e => { e.preventDefault(); showToast(); });
+  // Clic droit bloqué uniquement sur les images et les encarts portfolio
+  document.addEventListener('contextmenu', e => {
+    if (
+      e.target.tagName === 'IMG' ||
+      e.target.closest('.portfolio-item') ||
+      e.target.closest('.portfolio-featured-card') ||
+      e.target.closest('.graphisme-mosaic')
+    ) {
+      e.preventDefault();
+      showToast();
+    }
+  });
+
+  // Drag bloqué uniquement sur les images
+  document.addEventListener('dragstart', e => {
+    if (e.target.tagName === 'IMG') {
+      e.preventDefault();
+      showToast();
+    }
+  });
 })();
 
 // ── Contact form — mailto ─────────────────────────────────────────────
