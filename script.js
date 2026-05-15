@@ -84,78 +84,100 @@ Promise.all([
   // ── Footer ────────────────────────────────────────────────────────────
   document.getElementById('footerCopyright').textContent = content.footer.copyright;
 
-  // ── Portfolio ─────────────────────────────────────────────────────────
+  // ── Portfolio ─────────────────────────────────────────────────────────────
   const videoItems     = portfolio.items.filter(i => i.category === 'video');
   const graphismeItems = portfolio.items.filter(i => i.category === 'graphisme');
 
-  // Tirage aléatoire vidéo — une seule fois au chargement
-  const featuredVideo = videoItems[Math.floor(Math.random() * videoItems.length)];
+  const shuffle = arr => {
+    const a = [...arr];
+    for (let i = a.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [a[i], a[j]] = [a[j], a[i]];
+    }
+    return a;
+  };
 
-  function renderFeaturedVideo(item) {
-    const click  = item.link ? ` style="cursor:pointer" onclick="window.open('${item.link}','_blank','noopener,noreferrer')"` : '';
-    const hint   = item.link ? `<span class="portfolio-link-hint">↗ Voir le projet</span>` : '';
-    return `
-      <div class="portfolio-featured-card"${click}>
-        <img src="${item.image}" alt="${item.alt}" loading="lazy" draggable="false" />
-        <div class="portfolio-featured-overlay">
-          <span class="portfolio-tag">${item.tag}</span>
-          <h4>${item.title}</h4>
-          ${item.role ? `<p class="portfolio-role">${item.role}</p>` : ''}
-          <p class="portfolio-desc">${item.description}</p>
-          ${hint}
-        </div>
-      </div>`;
+  const shuffledVideos = shuffle(videoItems);
+
+  // Crée une carte <a> cliquable, iOS-safe
+  function makeCard(item) {
+    const el = document.createElement('a');
+    el.className = 'portfolio-item' + (item.link ? ' portfolio-item--linked' : '');
+    if (item.link) {
+      el.href = item.link;
+      el.target = '_blank';
+      el.rel = 'noopener noreferrer';
+    }
+    el.innerHTML =
+      '<img src="' + item.image + '" alt="' + item.alt + '" loading="lazy" draggable="false" />' +
+      '<div class="portfolio-overlay">' +
+      '<span class="portfolio-tag">' + item.tag + '</span>' +
+      '<h3>' + item.title + '</h3>' +
+      (item.role ? '<p class="portfolio-role">' + item.role + '</p>' : '') +
+      (item.link ? '<span class="portfolio-link-hint">&#9658; Voir</span>' : '') +
+      '</div>';
+    return el;
   }
 
-  // Encart graphisme : mosaïque 2×2 — remplacer src par l'image générique quand disponible
-  // Pour utiliser une image unique : remplacer le div.graphisme-mosaic par un <img src="...">
-  function renderFeaturedGraphisme() {
-    const mosaicImgs = graphismeItems.slice(0, 4).map(item =>
-      `<img src="${item.image}" alt="${item.alt}" loading="lazy" draggable="false" />`
-    ).join('');
-    return `
-      <div class="portfolio-featured-card">
-        <div class="graphisme-mosaic">${mosaicImgs}</div>
-        <div class="portfolio-featured-overlay">
-          <span class="portfolio-tag">Identité visuelle &amp; supports graphiques</span>
-          <h4>Graphisme</h4>
-          <p class="portfolio-desc">Logos, identités visuelles, cartes de visite et créations graphiques pour artisans, associations et entreprises en Occitanie.</p>
-        </div>
-      </div>`;
-  }
+  // ── Vidéo featured (desktop) ──────────────────────────────────────────────
+  const videoFeaturedEl = document.getElementById('videoFeatured');
+  const feat = shuffledVideos[0];
+  const featCard = document.createElement('a');
+  featCard.className = 'portfolio-featured-card' + (feat.link ? ' portfolio-item--linked' : '');
+  if (feat.link) { featCard.href = feat.link; featCard.target = '_blank'; featCard.rel = 'noopener noreferrer'; }
+  featCard.innerHTML =
+    '<img src="' + feat.image + '" alt="' + feat.alt + '" loading="lazy" draggable="false" />' +
+    '<div class="portfolio-featured-overlay">' +
+    '<span class="portfolio-tag">' + feat.tag + '</span>' +
+    '<h4>' + feat.title + '</h4>' +
+    (feat.role ? '<p class="portfolio-role">' + feat.role + '</p>' : '') +
+    (feat.description ? '<p class="portfolio-desc">' + feat.description + '</p>' : '') +
+    (feat.link ? '<span class="portfolio-link-hint">&#9658; Voir</span>' : '') +
+    '</div>';
+  videoFeaturedEl.appendChild(featCard);
 
-  function renderGridItem(item) {
-    const cls  = item.link ? 'portfolio-item portfolio-item--linked' : 'portfolio-item';
-    const click = item.link ? ` onclick="window.open('${item.link}','_blank','noopener,noreferrer')"` : '';
-    const hint  = item.link ? `<span class="portfolio-link-hint">↗ Voir</span>` : '';
-    return `
-      <div class="${cls}"${click}>
-        <img src="${item.image}" alt="${item.alt}" loading="lazy" draggable="false" />
-        <div class="portfolio-overlay">
-          <span class="portfolio-tag">${item.tag}</span>
-          <h3>${item.title}</h3>
-          ${item.role ? `<p class="portfolio-role">${item.role}</p>` : ''}
-          <p class="portfolio-desc-small">${item.description}</p>
-          ${hint}
-        </div>
-      </div>`;
-  }
+  // Mobile : 3 cartes aléatoires (remplace la featured card)
+  const mobileVidGrid = document.createElement('div');
+  mobileVidGrid.className = 'portfolio-grid-mini portfolio-mobile-video';
+  shuffledVideos.slice(0, 3).forEach(item => mobileVidGrid.appendChild(makeCard(item)));
+  videoFeaturedEl.appendChild(mobileVidGrid);
 
-  // Encarts principaux
-  document.getElementById('videoFeatured').innerHTML      = renderFeaturedVideo(featuredVideo);
-  document.getElementById('graphismeFeatured').innerHTML  = renderFeaturedGraphisme();
-
-  // Accordéon vidéo — tous les projets vidéo
+  // ── Vidéo accordéon ───────────────────────────────────────────────────────
   const videoGrid = document.getElementById('videoGrid');
-  videoItems.forEach(item => {
-    videoGrid.insertAdjacentHTML('beforeend', renderGridItem(item));
-  });
+  shuffledVideos.forEach(item => videoGrid.appendChild(makeCard(item)));
 
-  // Accordéon graphisme — tous les projets graphisme
+  // ── Graphisme featured — illustration ─────────────────────────────────────
+  const graphismeFeaturedEl = document.getElementById('graphismeFeatured');
+  const graphismeCard = document.createElement('div');
+  graphismeCard.className = 'portfolio-featured-card';
+  graphismeCard.innerHTML =
+    '<img src="/images/illustration-atelier-graphisme-identite-visuelle-le-stud.webp"' +
+    ' alt="Atelier de cr\u00e9ation graphique et identit\u00e9 visuelle \u2014 Le Stud"' +
+    ' loading="lazy" draggable="false" />' +
+    '<div class="portfolio-featured-overlay">' +
+    '<span class="portfolio-tag">Identit\u00e9 visuelle &amp; supports graphiques</span>' +
+    '<h4>Graphisme</h4>' +
+    '<p class="portfolio-desc">Logos, identit\u00e9s visuelles, cartes de visite et cr\u00e9ations graphiques pour artisans, associations et entreprises en Occitanie.</p>' +
+    '</div>';
+  graphismeFeaturedEl.appendChild(graphismeCard);
+
+  // ── Graphisme accordéon — légende sous la vignette ────────────────────────
   const graphismeGrid = document.getElementById('graphismeGrid');
   graphismeItems.forEach(item => {
-    graphismeGrid.insertAdjacentHTML('beforeend', renderGridItem(item));
+    const wrap = document.createElement('div');
+    wrap.className = 'portfolio-graphisme-wrap';
+    wrap.appendChild(makeCard(item));
+    const caption = document.createElement('div');
+    caption.className = 'portfolio-graphisme-caption';
+    caption.innerHTML =
+      '<span class="portfolio-tag">' + item.tag + '</span>' +
+      '<h3>' + item.title + '</h3>' +
+      (item.role ? '<p class="portfolio-role">' + item.role + '</p>' : '');
+    wrap.appendChild(caption);
+    graphismeGrid.appendChild(wrap);
   });
+
+
 
 }).catch(err => console.error('Erreur chargement contenu :', err));
 
