@@ -240,10 +240,9 @@ a { text-decoration: none; color: inherit; }
 }
 
 #heroSubtitle {
-  font-size: clamp(0.75rem, 1.2vw, 0.95rem);
+  font-size: clamp(0.8rem, 1.2vw, 0.95rem);
   color: oklch(90% 0.01 72 / 0.75);
-  letter-spacing: 0.2em;
-  text-transform: uppercase;
+  letter-spacing: 0.08em;
   margin-bottom: 0.9rem;
   line-height: 1.6;
 }
@@ -268,13 +267,13 @@ a { text-decoration: none; color: inherit; }
 
 .hero-eyebrow {
   display: block;
-  font-family: var(--font-display);
-  font-size: clamp(2rem, 8vw, 8rem);
-  font-weight: 900;
-  letter-spacing: 0.04em;
+  font-family: var(--font-sans);
+  font-size: clamp(0.65rem, 0.9vw, 0.8rem);
+  font-weight: 600;
+  letter-spacing: 0.22em;
   text-transform: uppercase;
   color: var(--accent2);
-  margin-bottom: 0.2rem;
+  margin-bottom: 1.2rem;
   animation: fadeSlideUp 1s cubic-bezier(0.16, 1, 0.3, 1) 0s both;
 }
 
@@ -334,29 +333,27 @@ a { text-decoration: none; color: inherit; }
   position: relative;
   overflow: hidden;
   isolation: isolate;
-  background: transparent;
-  border: 1px solid var(--white);
-  color: var(--white);
+  background: var(--accent2);
+  border: 1px solid var(--accent2);
+  color: var(--black);
   padding: 1rem 2.5rem;
   font-size: 0.85rem;
   letter-spacing: 0.12em;
   text-transform: uppercase;
   border-radius: var(--radius);
-  transition: color 0.38s cubic-bezier(0.16, 1, 0.3, 1);
+  font-weight: 600;
+  transition: background 0.3s cubic-bezier(0.16, 1, 0.3, 1),
+              border-color 0.3s cubic-bezier(0.16, 1, 0.3, 1),
+              color 0.3s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-.btn-primary::after {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: var(--white);
-  transform: translateY(105%);
-  transition: transform 0.38s cubic-bezier(0.16, 1, 0.3, 1);
-  z-index: -1;
-}
+.btn-primary::after { content: none; }
 
-.btn-primary:hover { color: var(--black); }
-.btn-primary:hover::after { transform: translateY(0); }
+.btn-primary:hover {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: var(--black);
+}
 .btn-primary:active { transform: scale(0.98); }
 
 .btn-secondary {
