@@ -142,9 +142,16 @@ Promise.all([
   shuffledVideos.slice(0, 3).forEach(item => mobileVidGrid.appendChild(makeCard(item)));
   videoFeaturedEl.appendChild(mobileVidGrid);
 
-  // ── Vidéo accordéon ───────────────────────────────────────────────────────
+  // ── Vidéo accordéon — exclut les vidéos déjà affichées ──────────────────────
+  const shownCount     = window.innerWidth <= 768 ? 3 : 1;
+  const accordionVideos = shuffledVideos.slice(shownCount);
   const videoGrid = document.getElementById('videoGrid');
-  shuffledVideos.forEach(item => videoGrid.appendChild(makeCard(item)));
+  if (accordionVideos.length === 0) {
+    const acc = document.querySelector('#categoryVideo .portfolio-accordion');
+    if (acc) acc.style.display = 'none';
+  } else {
+    accordionVideos.forEach(item => videoGrid.appendChild(makeCard(item)));
+  }
 
   // ── Graphisme featured — illustration ─────────────────────────────────────
   const graphismeFeaturedEl = document.getElementById('graphismeFeatured');
