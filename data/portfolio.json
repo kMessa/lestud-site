@@ -1,6 +1,7 @@
 {
   "items": [
     {
+      "category": "video",
       "title": "Entre Nous — Captation aérienne",
       "tag": "Long-métrage · drone",
       "role": "Télépilote drone",
@@ -10,73 +11,98 @@
       "link": "https://youtu.be/fd8YeijD1lo"
     },
     {
+      "category": "video",
+      "title": "Entre Nous — Montage",
       "tag": "Long-métrage indépendant",
       "role": "Montage · post-production",
       "image": "/images/video-long-metrage-entre-nous-montage-le-stud.webp",
       "alt": "Extrait du long-métrage Entre nous — montage et post-production par Le Stud",
-      "description": "Participation à un long-métrage indépendant en tant qu'assistant monteur. Un travail de construction narrative, de rythme et de précision sur la durée — une expérience complète du montage de film.",
+      "description": "Participation à un long-métrage indépendant en tant qu'assistant monteur. Travail de construction narrative, de rythme et de précision sur la durée — une expérience complète du flux de post-production, de l'assemblage des rushes à la livraison finale.",
       "link": "https://www.allocine.fr/video/player_gen_cmedia=19601224&cfilm=302753.html"
     },
     {
+      "category": "video",
       "title": "CFA Montpellier — Handball",
       "tag": "Vidéo corporate",
       "role": "Captation · montage",
       "image": "/images/captation-tournoi-handball-cfa-montpellier-le-stud.webp",
       "alt": "Vidéo tournoi de handball CFA Montpellier 6e édition — captation et montage par Le Stud",
-      "description": "Captation et montage d'une vidéo corporative pour l'association sportive du CFA de Montpellier, à l'occasion de la 6e édition de leur tournoi de handball. Réalisation complète, du tournage à la livraison.",
+      "description": "Captation et montage de la vidéo officielle du 6e tournoi de handball du CFA de Montpellier. Prise en charge complète : tournage multi-angle de l'événement sportif, sélection des images, montage rythmé et livraison client.",
       "link": "https://youtu.be/5w8Wip4YW90?is=tcztWS45WQuY_8-t"
     },
     {
+      "category": "video",
       "title": "Clip DJ — Platines",
       "tag": "Clip musical",
       "role": "Réalisation · montage",
       "image": "/images/clip-dj-platines-mix-realisation-montage-le-stud.webp",
       "alt": "Clip musical DJ platines et mix — réalisation et montage par Le Stud",
-      "description": "Réalisation et montage d'un clip pour un collectif de trois DJs. Univers sombre et cinématographique, centré sur les platines, le mouvement des mains et l'énergie du mix. Du cadrage serré à l'ambiance lumière, un projet construit autour de l'identité sonore du groupe.",
+      "description": "Réalisation et montage d'un clip pour un collectif de trois DJs. Univers sombre et cinématographique, centré sur les platines, le mouvement des mains et l'énergie du mix. Compétence : direction artistique, cadrage serré, ambiance lumière.",
       "link": "https://youtu.be/MNOMZzwO_gI?is=qQLNGdyC9h-L8ovR"
     },
     {
+      "category": "video",
       "title": "Je glisse — Goulamas'k",
       "tag": "Clip musical",
       "role": "Écriture · mise en scène",
       "image": "/images/clip-je-glisse-goulamask-ecriture-mise-en-scene-le-stud.webp",
       "alt": "Clip musical Je glisse Goulamas'k — écriture et mise en scène Le Stud",
-      "description": "Participation à l'écriture et à la mise en scène du clip « Je glisse » du groupe Goulamas'k. Un travail artistique collaboratif entre réalisation visuelle et direction de la narration.",
+      "description": "Participation à l'écriture et à la mise en scène du clip « Je glisse » du groupe Goulamas'k. Travail artistique collaboratif entre réalisation visuelle et direction narrative.",
       "link": "https://youtu.be/Dr5AWwTwX10?is=eNiu_fBZHyrSSzck"
-    }
-  ],
-  "graphisme": [
+    },
     {
+      "category": "video",
+      "title": "Animodz",
+      "tag": "Motion design",
+      "role": "Animation logo · identité animée",
+      "image": "https://picsum.photos/id/430/600/400",
+      "alt": "Animation de logo Animodz — motion design par Le Stud Narbonne",
+      "description": "Animation de logo pour la marque Animodz. Conception d'un habillage animé pour renforcer l'identité visuelle sur les supports numériques — réseaux sociaux, intros vidéo, présentations. Compétence : motion design, timing, cohérence avec la charte graphique."
+    },
+    {
+      "category": "video",
+      "title": "Riders on the Storm",
+      "tag": "Événement · étalonnage",
+      "role": "Étalonnage · colorimétrie",
+      "image": "https://picsum.photos/id/453/900/600",
+      "alt": "Étalonnage vidéo inauguration skatepark de Narbonne — Le Stud",
+      "description": "Étalonnage et travail colorimétrique sur les images de l'inauguration du skatepark de Narbonne. Compétence : correction couleur, création d'une ambiance cohérente avec le projet artistique, maîtrise des outils de grading en post-production."
+    },
+    {
+      "category": "graphisme",
       "title": "Logo Double King Production",
       "tag": "Identité visuelle",
       "role": "Création logo · association",
       "image": "/images/graphisme-logo-double-king-production-le-stud.webp",
       "alt": "Logo Double King Production association culturelle — création par Le Stud",
-      "description": "Création du logo de l'association Double King Production, structure culturelle organisant événements, expositions et projets artistiques. Un visuel fort, reconnaissable et ancré dans l'identité de l'asso."
+      "description": "Création du logo de l'association culturelle Double King Production. Compétence : identité forte et reconnaissable, adaptée à une structure organisant expositions, événements et projets artistiques."
     },
     {
+      "category": "graphisme",
       "title": "Carte de visite MJ Rénovation",
-      "tag": "Graphisme",
+      "tag": "Graphisme print",
       "role": "Logo · carte de visite",
       "image": "/images/graphisme-carte-visite-mj-renovation-narbonne-le-stud.webp",
       "alt": "Logo et carte de visite MJ Rénovation artisan BTP Narbonne — création par Le Stud",
-      "description": "Conception du logo et de la carte de visite pour MJ Rénovation, artisan BTP. Un design sobre et professionnel, en noir et blanc, pour une activité de rénovation et de travaux à destination des particuliers."
+      "description": "Conception du logo et de la carte de visite pour MJ Rénovation, artisan BTP. Compétence : design print sobre et professionnel — noir & blanc, typographie lisible, adaptée aux particuliers et professionnels du secteur rénovation."
     },
     {
+      "category": "graphisme",
       "title": "Carte de visite Aéro-Visum",
-      "tag": "Graphisme",
+      "tag": "Graphisme print",
       "role": "Logo · carte de visite",
       "image": "/images/graphisme-carte-visite-aero-visum-drone-le-stud.webp",
       "alt": "Carte de visite Aéro-Visum télépilote de drone — création graphique par Le Stud",
-      "description": "Conception de la carte de visite pour Aéro-Visum, télépilote de drone professionnel. Design bleu nuit et épuré pour rappeler le ciel et le vol — le logo drone mis en avant sur fond sobre et premium."
+      "description": "Conception de la carte de visite pour Aéro-Visum, télépilote de drone professionnel. Compétence : identité graphique premium — palette bleu nuit, design épuré, mise en valeur du logo drone sur fond sobre et crédible."
     },
     {
+      "category": "graphisme",
       "title": "Narboclim — Carte de visite",
-      "tag": "Graphisme · identité visuelle",
+      "tag": "Identité visuelle · print",
       "role": "Conception graphique · support imprimé",
       "image": "/images/graphisme-carte-visite-narboclim-recto-le-stud.webp",
       "alt": "Carte de visite Narboclim climatisation plomberie Narbonne — création par Le Stud",
-      "description": "Conception de la carte de visite pour Narboclim, entreprise narbonnaise spécialisée en climatisation, plomberie et électricité. Design centré sur l'identité de marque : flocon, éclair, palette bleue et typographie affirmée."
+      "description": "Conception de la carte de visite pour Narboclim, entreprise narbonnaise spécialisée en climatisation, plomberie et électricité. Compétence : identité de marque cohérente — icônes métier, palette bleue affirmée, typographie claire et professionnelle."
     }
   ]
 }

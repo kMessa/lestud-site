@@ -111,14 +111,38 @@
   <!-- PARALLAX SEPARATOR 1 -->
   <div class="parallax parallax-sep" style="background-image: url('./images/paysage-occitanie-le-stud.jpg');"></div>
 
-  <!-- GALERIE -->
+  <!-- PORTFOLIO -->
   <section id="portfolio" class="section section-dark">
     <div class="container">
       <h2 class="section-title left reveal">Quelques réalisations</h2>
       <p class="section-subtitle left reveal">Une sélection de projets réalisés depuis 2017. Certains restent confidentiels ou partiellement affichés selon les autorisations des clients et collaborateurs.</p>
-      <div class="portfolio-grid reveal-stagger" id="portfolioGrid">
-        <div class="portfolio-spinner" id="portfolioSpinner"></div>
+
+      <!-- Catégorie Vidéo -->
+      <div class="portfolio-category reveal" id="categoryVideo">
+        <h3 class="category-title">Vidéo</h3>
+        <!-- Encart principal : 1 projet vidéo aléatoire au chargement -->
+        <div id="videoFeatured"></div>
+        <div class="portfolio-accordion">
+          <button class="accordion-btn" aria-expanded="false" data-target="videoMore">Voir plus</button>
+          <div class="accordion-panel" id="videoMore" hidden>
+            <div class="portfolio-grid-mini" id="videoGrid"></div>
+          </div>
+        </div>
       </div>
+
+      <!-- Catégorie Graphisme -->
+      <div class="portfolio-category reveal" id="categoryGraphisme">
+        <h3 class="category-title">Graphisme</h3>
+        <!-- Encart principal : mosaïque fixe — remplacer par image générique quand disponible -->
+        <div id="graphismeFeatured"></div>
+        <div class="portfolio-accordion">
+          <button class="accordion-btn" aria-expanded="false" data-target="graphismeMore">Voir plus</button>
+          <div class="accordion-panel" id="graphismeMore" hidden>
+            <div class="portfolio-grid-mini" id="graphismeGrid"></div>
+          </div>
+        </div>
+      </div>
+
     </div>
   </section>
 

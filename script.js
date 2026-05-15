@@ -16,7 +16,6 @@ Promise.all([
   const root = document.documentElement;
   root.style.setProperty('--accent',  theme.accent_color);
   root.style.setProperty('--accent2', theme.accent2_color);
-  // Services background
   document.getElementById('services').style.background = theme.services_bg_color;
 
   // ── Hero ──────────────────────────────────────────────────────────────
@@ -85,9 +84,9 @@ Promise.all([
   // ── Footer ────────────────────────────────────────────────────────────
   document.getElementById('footerCopyright').textContent = content.footer.copyright;
 
-  // ── Portfolio ──────────────────────────────────────────────────────────────────────────────────
-  const grid = document.getElementById('portfolioGrid');
-  document.getElementById('portfolioSpinner')?.remove();
+  // ── Portfolio ─────────────────────────────────────────────────────────────
+  const videoItems     = portfolio.items.filter(i => i.category === 'video');
+  const graphismeItems = portfolio.items.filter(i => i.category === 'graphisme');
 
   const shuffle = arr => {
     const a = [...arr];
@@ -98,74 +97,86 @@ Promise.all([
     return a;
   };
 
-  const renderItem = (item, featured) => {
+  const shuffledVideos = shuffle(videoItems);
+
+  // Crée une carte <a> cliquable, iOS-safe
+  function makeCard(item) {
     const el = document.createElement('a');
-    el.className = 'portfolio-item' + (featured ? ' portfolio-featured' : '');
+    el.className = 'portfolio-item' + (item.link ? ' portfolio-item--linked' : '');
     if (item.link) {
       el.href = item.link;
       el.target = '_blank';
       el.rel = 'noopener noreferrer';
-      el.classList.add('portfolio-item--linked');
     }
-    el.innerHTML = `
-      <img src="${item.image}" alt="${item.alt}" loading="lazy" />
-      <div class="portfolio-overlay">
-        <span class="portfolio-tag">${item.tag}</span>
-        <h3>${item.title}</h3>
-        ${item.role ? `<p class="portfolio-role">${item.role}</p>` : ''}
-        ${item.link ? `<span class="portfolio-link-hint">&#9658; Voir</span>` : ''}
-      </div>`;
+    el.innerHTML =
+      '<img src="' + item.image + '" alt="' + item.alt + '" loading="lazy" draggable="false" />' +
+      '<div class="portfolio-overlay">' +
+      '<span class="portfolio-tag">' + item.tag + '</span>' +
+      '<h3>' + item.title + '</h3>' +
+      (item.role ? '<p class="portfolio-role">' + item.role + '</p>' : '') +
+      (item.link ? '<span class="portfolio-link-hint">&#9658; Voir</span>' : '') +
+      '</div>';
     return el;
-  };
+  }
 
-  // Vidéo — mélangé, premier item featured ; seuls les 3 premiers visibles sur mobile
-  const shuffledVideos = shuffle(portfolio.items);
-  shuffledVideos.forEach((item, i) => {
-    const el = renderItem(item, i === 0);
-    if (i >= 3) el.classList.add('portfolio-item--mobile-hidden');
-    grid.appendChild(el);
+  // ── Vidéo featured (desktop) ──────────────────────────────────────────────
+  const videoFeaturedEl = document.getElementById('videoFeatured');
+  const feat = shuffledVideos[0];
+  const featCard = document.createElement('a');
+  featCard.className = 'portfolio-featured-card' + (feat.link ? ' portfolio-item--linked' : '');
+  if (feat.link) { featCard.href = feat.link; featCard.target = '_blank'; featCard.rel = 'noopener noreferrer'; }
+  featCard.innerHTML =
+    '<img src="' + feat.image + '" alt="' + feat.alt + '" loading="lazy" draggable="false" />' +
+    '<div class="portfolio-featured-overlay">' +
+    '<span class="portfolio-tag">' + feat.tag + '</span>' +
+    '<h4>' + feat.title + '</h4>' +
+    (feat.role ? '<p class="portfolio-role">' + feat.role + '</p>' : '') +
+    (feat.description ? '<p class="portfolio-desc">' + feat.description + '</p>' : '') +
+    (feat.link ? '<span class="portfolio-link-hint">&#9658; Voir</span>' : '') +
+    '</div>';
+  videoFeaturedEl.appendChild(featCard);
+
+  // Mobile : 3 cartes aléatoires (remplace la featured card)
+  const mobileVidGrid = document.createElement('div');
+  mobileVidGrid.className = 'portfolio-grid-mini portfolio-mobile-video';
+  shuffledVideos.slice(0, 3).forEach(item => mobileVidGrid.appendChild(makeCard(item)));
+  videoFeaturedEl.appendChild(mobileVidGrid);
+
+  // ── Vidéo accordéon ───────────────────────────────────────────────────────
+  const videoGrid = document.getElementById('videoGrid');
+  shuffledVideos.forEach(item => videoGrid.appendChild(makeCard(item)));
+
+  // ── Graphisme featured — illustration ─────────────────────────────────────
+  const graphismeFeaturedEl = document.getElementById('graphismeFeatured');
+  const graphismeCard = document.createElement('div');
+  graphismeCard.className = 'portfolio-featured-card';
+  graphismeCard.innerHTML =
+    '<img src="/images/illustration-atelier-graphisme-identite-visuelle-le-stud.webp"' +
+    ' alt="Atelier de cr\u00e9ation graphique et identit\u00e9 visuelle \u2014 Le Stud"' +
+    ' loading="lazy" draggable="false" />' +
+    '<div class="portfolio-featured-overlay">' +
+    '<span class="portfolio-tag">Identit\u00e9 visuelle &amp; supports graphiques</span>' +
+    '<h4>Graphisme</h4>' +
+    '<p class="portfolio-desc">Logos, identit\u00e9s visuelles, cartes de visite et cr\u00e9ations graphiques pour artisans, associations et entreprises en Occitanie.</p>' +
+    '</div>';
+  graphismeFeaturedEl.appendChild(graphismeCard);
+
+  // ── Graphisme accordéon — légende sous la vignette ────────────────────────
+  const graphismeGrid = document.getElementById('graphismeGrid');
+  graphismeItems.forEach(item => {
+    const wrap = document.createElement('div');
+    wrap.className = 'portfolio-graphisme-wrap';
+    wrap.appendChild(makeCard(item));
+    const caption = document.createElement('div');
+    caption.className = 'portfolio-graphisme-caption';
+    caption.innerHTML =
+      '<span class="portfolio-tag">' + item.tag + '</span>' +
+      '<h3>' + item.title + '</h3>' +
+      (item.role ? '<p class="portfolio-role">' + item.role + '</p>' : '');
+    wrap.appendChild(caption);
+    graphismeGrid.appendChild(wrap);
   });
 
-  if (portfolio.graphisme?.length) {
-    const container = grid.closest('.container');
-
-    // Illustration graphisme — visible uniquement sur mobile
-    const illustration = document.createElement('div');
-    illustration.className = 'graphisme-illustration';
-    illustration.innerHTML = '<img src="/images/illustration-atelier-graphisme-identite-visuelle-le-stud.webp" alt="Atelier de création graphique et identité visuelle — Le Stud" loading="lazy" />';
-
-    const toggle = document.createElement('button');
-    toggle.className = 'portfolio-graphisme-toggle';
-    toggle.setAttribute('aria-expanded', 'false');
-    toggle.innerHTML = 'Graphisme & identité visuelle <span class="portfolio-graphisme-count">(' + portfolio.graphisme.length + ')</span><span class="portfolio-graphisme-arrow" aria-hidden="true">▼</span>';
-
-    const graphismeGrid = document.createElement('div');
-    graphismeGrid.className = 'portfolio-grid portfolio-graphisme-grid';
-    portfolio.graphisme.forEach((item) => {
-      const wrap = document.createElement('div');
-      wrap.className = 'portfolio-graphisme-wrap';
-      // Image en premier, légende en dessous
-      wrap.appendChild(renderItem(item, false));
-      const caption = document.createElement('div');
-      caption.className = 'portfolio-graphisme-caption';
-      caption.innerHTML =
-        '<span class="portfolio-tag">' + item.tag + '</span>' +
-        '<h3>' + item.title + '</h3>' +
-        (item.role ? '<p class="portfolio-role">' + item.role + '</p>' : '');
-      wrap.appendChild(caption);
-      graphismeGrid.appendChild(wrap);
-    });
-
-    toggle.addEventListener('click', () => {
-      const open = graphismeGrid.classList.toggle('open');
-      toggle.classList.toggle('open', open);
-      toggle.setAttribute('aria-expanded', open);
-    });
-
-    container.appendChild(illustration);
-    container.appendChild(toggle);
-    container.appendChild(graphismeGrid);
-  }
 
 
 }).catch(err => console.error('Erreur chargement contenu :', err));
@@ -230,10 +241,22 @@ document.querySelectorAll('.reveal, .reveal-stagger').forEach(el => {
   revealObserver.observe(el);
 });
 
-// ── Copy / right-click protection ────────────────────────────────────
+// ── Accordéons portfolio ───────────────────────────────────────────────
+document.addEventListener('click', e => {
+  const btn = e.target.closest('.accordion-btn');
+  if (!btn) return;
+  const panel  = document.getElementById(btn.dataset.target);
+  if (!panel) return;
+  const isOpen = btn.getAttribute('aria-expanded') === 'true';
+  btn.setAttribute('aria-expanded', String(!isOpen));
+  btn.textContent = isOpen ? 'Voir plus' : 'Voir moins';
+  panel.hidden = isOpen;
+});
+
+// ── Protection images uniquement ──────────────────────────────────────
 (function () {
   const msgs = ['Bien essayé', 'non.', 'Pourquoi faire ?'];
-  let toastEl = null;
+  let toastEl  = null;
   let hideTimer = null;
 
   function showToast() {
@@ -248,11 +271,26 @@ document.querySelectorAll('.reveal, .reveal-stagger').forEach(el => {
     hideTimer = setTimeout(() => toastEl.classList.remove('visible'), 1800);
   }
 
-  document.addEventListener('contextmenu', e => { e.preventDefault(); showToast(); });
-  document.addEventListener('copy',        e => { e.preventDefault(); showToast(); });
-  document.addEventListener('cut',         e => { e.preventDefault(); showToast(); });
-  document.addEventListener('selectstart', e => e.preventDefault());
-  document.addEventListener('dragstart',   e => { e.preventDefault(); showToast(); });
+  // Clic droit bloqué uniquement sur les images et les encarts portfolio
+  document.addEventListener('contextmenu', e => {
+    if (
+      e.target.tagName === 'IMG' ||
+      e.target.closest('.portfolio-item') ||
+      e.target.closest('.portfolio-featured-card') ||
+      e.target.closest('.graphisme-mosaic')
+    ) {
+      e.preventDefault();
+      showToast();
+    }
+  });
+
+  // Drag bloqué uniquement sur les images
+  document.addEventListener('dragstart', e => {
+    if (e.target.tagName === 'IMG') {
+      e.preventDefault();
+      showToast();
+    }
+  });
 })();
 
 // ── Contact form — mailto ─────────────────────────────────────────────
