@@ -48,18 +48,21 @@
     "items": [
       {
         "title": "Pack Essentiel",
+        "price": "À partir de 390 €",
         "description": "Pour présenter une activité simplement : une vidéo courte, soignée, directement utilisable sur vos supports."
       },
       {
         "title": "Pack Réseaux Sociaux",
+        "price": "À partir de 490 €",
         "description": "Pour créer plusieurs contenus courts à partir d'une même session : reels, teasers, formats verticaux."
       },
       {
         "title": "Pack Projet Complet",
+        "price": "À partir de 790 €",
         "description": "Pour un clip, une vidéo d'entreprise, une interview ou un événement plus construit, du tournage à la livraison finale."
       }
     ],
-    "note": "Chaque projet est différent. Les prestations sont proposées sur devis, avec la possibilité de construire une formule adaptée à votre besoin, votre délai et votre budget."
+    "note": "Les tarifs sont donnés à titre indicatif. Chaque projet fait l'objet d'un devis personnalisé selon la durée du tournage, le montage, les déplacements, les formats à livrer et le niveau de finition souhaité."
   },
   "about": {
     "title": "À propos",

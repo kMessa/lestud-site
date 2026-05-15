@@ -53,6 +53,7 @@ Promise.all([
     div.innerHTML = `
       <span class="pack-icon" aria-hidden="true">${packIcons[i] || ''}</span>
       <h3>${item.title}</h3>
+      ${item.price ? `<p class="pack-price">${item.price}</p>` : ''}
       <p>${item.description}</p>`;
     packsGrid.appendChild(div);
   });
