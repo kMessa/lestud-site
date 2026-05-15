@@ -767,6 +767,10 @@ a.portfolio-item {
   display: none;
 }
 
+.graphisme-illustration {
+  display: none;
+}
+
 .portfolio-link-hint {
   font-size: 0.7rem;
   color: var(--accent);
@@ -1283,9 +1287,24 @@ a.portfolio-item {
     display: flex;
     flex-direction: column;
   }
+  .portfolio-item--mobile-hidden { display: none; }
+
+  .graphisme-illustration {
+    display: block;
+    border-radius: var(--radius);
+    overflow: hidden;
+    aspect-ratio: 3/2;
+    margin-bottom: 0.75rem;
+  }
+  .graphisme-illustration img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
   .portfolio-graphisme-caption {
     display: block;
-    padding: 0.4rem 0.1rem 0.45rem;
+    padding: 0.5rem 0.1rem 0.25rem;
   }
   .portfolio-graphisme-caption .portfolio-tag {
     display: block;

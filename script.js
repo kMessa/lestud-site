@@ -85,11 +85,20 @@ Promise.all([
   // ── Footer ────────────────────────────────────────────────────────────
   document.getElementById('footerCopyright').textContent = content.footer.copyright;
 
-  // ── Portfolio ─────────────────────────────────────────────────────────
+  // ── Portfolio ──────────────────────────────────────────────────────────────────────────────────
   const grid = document.getElementById('portfolioGrid');
   document.getElementById('portfolioSpinner')?.remove();
 
-  const renderItem = (item, i, featured) => {
+  const shuffle = arr => {
+    const a = [...arr];
+    for (let i = a.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [a[i], a[j]] = [a[j], a[i]];
+    }
+    return a;
+  };
+
+  const renderItem = (item, featured) => {
     const el = document.createElement('a');
     el.className = 'portfolio-item' + (featured ? ' portfolio-featured' : '');
     if (item.link) {
@@ -104,36 +113,46 @@ Promise.all([
         <span class="portfolio-tag">${item.tag}</span>
         <h3>${item.title}</h3>
         ${item.role ? `<p class="portfolio-role">${item.role}</p>` : ''}
-        ${item.link ? `<span class="portfolio-link-hint">▶ Voir</span>` : ''}
+        ${item.link ? `<span class="portfolio-link-hint">&#9658; Voir</span>` : ''}
       </div>`;
     return el;
   };
 
-  portfolio.items.forEach((item, i) => {
-    grid.appendChild(renderItem(item, i, i === 0));
+  // Vidéo — mélangé, premier item featured ; seuls les 3 premiers visibles sur mobile
+  const shuffledVideos = shuffle(portfolio.items);
+  shuffledVideos.forEach((item, i) => {
+    const el = renderItem(item, i === 0);
+    if (i >= 3) el.classList.add('portfolio-item--mobile-hidden');
+    grid.appendChild(el);
   });
 
   if (portfolio.graphisme?.length) {
     const container = grid.closest('.container');
 
+    // Illustration graphisme — visible uniquement sur mobile
+    const illustration = document.createElement('div');
+    illustration.className = 'graphisme-illustration';
+    illustration.innerHTML = '<img src="/images/illustration-atelier-graphisme-identite-visuelle-le-stud.webp" alt="Atelier de création graphique et identité visuelle — Le Stud" loading="lazy" />';
+
     const toggle = document.createElement('button');
     toggle.className = 'portfolio-graphisme-toggle';
     toggle.setAttribute('aria-expanded', 'false');
-    toggle.innerHTML = `Graphisme & identité visuelle <span class="portfolio-graphisme-count">(${portfolio.graphisme.length})</span><span class="portfolio-graphisme-arrow" aria-hidden="true">▼</span>`;
+    toggle.innerHTML = 'Graphisme & identité visuelle <span class="portfolio-graphisme-count">(' + portfolio.graphisme.length + ')</span><span class="portfolio-graphisme-arrow" aria-hidden="true">▼</span>';
 
     const graphismeGrid = document.createElement('div');
     graphismeGrid.className = 'portfolio-grid portfolio-graphisme-grid';
     portfolio.graphisme.forEach((item) => {
       const wrap = document.createElement('div');
       wrap.className = 'portfolio-graphisme-wrap';
+      // Image en premier, légende en dessous
+      wrap.appendChild(renderItem(item, false));
       const caption = document.createElement('div');
       caption.className = 'portfolio-graphisme-caption';
-      caption.innerHTML = `
-        <span class="portfolio-tag">${item.tag}</span>
-        <h3>${item.title}</h3>
-        ${item.role ? `<p class="portfolio-role">${item.role}</p>` : ''}`;
+      caption.innerHTML =
+        '<span class="portfolio-tag">' + item.tag + '</span>' +
+        '<h3>' + item.title + '</h3>' +
+        (item.role ? '<p class="portfolio-role">' + item.role + '</p>' : '');
       wrap.appendChild(caption);
-      wrap.appendChild(renderItem(item, 0, false));
       graphismeGrid.appendChild(wrap);
     });
 
@@ -143,9 +162,11 @@ Promise.all([
       toggle.setAttribute('aria-expanded', open);
     });
 
+    container.appendChild(illustration);
     container.appendChild(toggle);
     container.appendChild(graphismeGrid);
   }
+
 
 }).catch(err => console.error('Erreur chargement contenu :', err));
 
