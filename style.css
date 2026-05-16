@@ -601,6 +601,20 @@ a { text-decoration: none; color: inherit; }
   max-width: 65ch;
 }
 
+/* Packs — fond blanc */
+#packs .pack-item {
+  border-top-color: rgba(0,0,0,0.1);
+}
+#packs .pack-item h3 {
+  color: var(--black);
+}
+#packs .pack-item p:not(.pack-price) {
+  color: #666;
+}
+#packs .pack-note {
+  color: #888;
+}
+
 /* ===========================
    PARALLAX SEPARATOR
 =========================== */
