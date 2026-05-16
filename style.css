@@ -516,7 +516,7 @@ a { text-decoration: none; color: inherit; }
 
 /* Services — soft sage tint, friendly and calm */
 #services {
-  background: oklch(14% 0.018 65);
+  background: var(--dark);
   color: var(--white);
 }
 
