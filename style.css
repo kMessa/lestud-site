@@ -586,7 +586,7 @@ a { text-decoration: none; color: inherit; }
   line-height: 1;
 }
 
-.pack-item p {
+.pack-item p:not(.pack-price) {
   font-size: 0.9rem;
   color: rgba(255,255,255,0.5);
   line-height: 1.65;
