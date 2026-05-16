@@ -1127,6 +1127,47 @@ a { text-decoration: none; color: inherit; }
   line-height: 1.6;
 }
 
+/* Contact — fond blanc */
+#contact .contact-form input,
+#contact .contact-form textarea,
+#contact .contact-form select {
+  background: rgba(0,0,0,0.04);
+  border-color: rgba(0,0,0,0.15);
+  color: var(--black);
+}
+
+#contact .contact-form select {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='rgba(0,0,0,0.4)' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
+}
+
+#contact .contact-form select option {
+  background: var(--off-white);
+  color: var(--black);
+}
+
+#contact .contact-form input::placeholder,
+#contact .contact-form textarea::placeholder {
+  color: rgba(0,0,0,0.35);
+}
+
+#contact .contact-form input:focus,
+#contact .contact-form textarea:focus,
+#contact .contact-form select:focus {
+  border-color: var(--accent2);
+}
+
+#contact .contact-label {
+  color: rgba(0,0,0,0.45);
+}
+
+#contact .contact-item p {
+  color: #555;
+}
+
+#contact .contact-info {
+  border-left: none;
+}
+
 /* ===========================
    FAQ
 =========================== */
