@@ -42,7 +42,7 @@
 
   <nav id="navbar">
     <a href="/" class="nav-logo">Le Stud</a>
-    <button class="nav-toggle" id="navToggle" aria-label="Menu">&#9776;</button>
+    <button class="nav-toggle" id="navToggle" aria-label="Ouvrir le menu" aria-expanded="false">&#9776;</button>
     <ul class="nav-links" id="navLinks">
       <li><a href="/">Accueil</a></li>
       <li><a href="/#services">Services</a></li>
@@ -101,13 +101,14 @@
       <div class="footer-content">
         <span class="footer-logo">Le Stud</span>
         <p>© 2026 Le Stud — Studio vidéo &amp; photo en Occitanie. Tous droits réservés.</p>
-        <p class="footer-mention"><a href="/">Accueil</a> · <a href="mailto:armeldali.pro@gmail.com">Contact</a> · Mentions légales disponibles sur demande</p>
+        <p class="footer-mention"><a href="/">Accueil</a> · <a href="mailto:armeldali.pro@gmail.com">Contact</a> · <a href="/mentions-legales/">Mentions légales</a> · <a href="/confidentialite/">Confidentialité</a></p>
       </div>
       <nav class="footer-local" aria-label="Pages locales">
         <div class="footer-local-col">
           <strong>Narbonne</strong>
           <a href="/videaste-narbonne/">Vidéaste à Narbonne</a>
           <a href="/video-entreprise-narbonne/">Vidéo d'entreprise</a>
+          <a href="/clip-musical-narbonne/">Clip musical</a>
           <a href="/captation-evenement-narbonne/">Captation événement</a>
           <a href="/montage-video-narbonne/">Montage vidéo</a>
           <a href="/contenu-reseaux-sociaux-narbonne/">Contenus réseaux sociaux</a>
@@ -126,8 +127,14 @@
     window.addEventListener('scroll', () => { navbar.classList.toggle('scrolled', window.scrollY > 50); }, { passive: true });
     const navToggle = document.getElementById('navToggle');
     const navLinks  = document.getElementById('navLinks');
-    navToggle.addEventListener('click', () => navLinks.classList.toggle('open'));
-    navLinks.querySelectorAll('a').forEach(l => l.addEventListener('click', () => navLinks.classList.remove('open')));
+    navToggle.addEventListener('click', () => {
+      const isOpen = navLinks.classList.toggle('open');
+      navToggle.setAttribute('aria-expanded', String(isOpen));
+    });
+    navLinks.querySelectorAll('a').forEach(l => l.addEventListener('click', () => {
+      navLinks.classList.remove('open');
+      navToggle.setAttribute('aria-expanded', 'false');
+    }));
     const msgs = ['Bien essayé', 'non.', 'Pourquoi faire ?'];
     let toastEl = null, hideTimer = null;
     function showToast() {
@@ -137,11 +144,12 @@
       clearTimeout(hideTimer);
       hideTimer = setTimeout(() => toastEl.classList.remove('visible'), 1800);
     }
-    document.addEventListener('contextmenu', e => { e.preventDefault(); showToast(); });
-    document.addEventListener('copy',        e => { e.preventDefault(); showToast(); });
-    document.addEventListener('cut',         e => { e.preventDefault(); showToast(); });
-    document.addEventListener('selectstart', e => e.preventDefault());
-    document.addEventListener('dragstart',   e => { e.preventDefault(); showToast(); });
+    document.addEventListener('contextmenu', e => {
+      if (e.target.tagName === 'IMG') { e.preventDefault(); showToast(); }
+    });
+    document.addEventListener('dragstart', e => {
+      if (e.target.tagName === 'IMG') { e.preventDefault(); showToast(); }
+    });
     const ro = new IntersectionObserver((entries) => {
       entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); ro.unobserve(e.target); } });
     }, { threshold: 0.1, rootMargin: '0px 0px -52px 0px' });
