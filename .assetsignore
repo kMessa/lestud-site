@@ -1,0 +1,14 @@
+.git/
+.agents/
+.claude/
+.sites-runtime/
+.wrangler/
+node_modules/
+.gitattributes
+.gitignore
+.assetsignore
+CLAUDE.md
+PRODUCT.md
+README.md
+skills-lock.json
+wrangler.jsonc

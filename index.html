@@ -43,13 +43,13 @@
   <!-- NAV -->
   <nav id="navbar">
     <div class="nav-logo">Le Stud</div>
-    <button class="nav-toggle" id="navToggle" aria-label="Menu">&#9776;</button>
+    <button class="nav-toggle" id="navToggle" aria-label="Ouvrir le menu" aria-expanded="false">&#9776;</button>
     <ul class="nav-links" id="navLinks">
       <li><a href="#hero">Accueil</a></li>
-      <li><a href="#about">À propos</a></li>
       <li><a href="#services">Services</a></li>
-      <li><a href="#packs">Les packs</a></li>
       <li><a href="#portfolio">Portfolio</a></li>
+      <li><a href="#packs">Les packs</a></li>
+      <li><a href="#about">À propos</a></li>
       <li><a href="#contact" class="nav-cta">Contact</a></li>
     </ul>
   </nav>
@@ -61,11 +61,11 @@
     <div class="hero-overlay"></div>
     <div class="hero-content">
       <span class="hero-eyebrow" id="heroEyebrow">Le Stud</span>
-      <h1 id="heroTitle">Studio vidéo à Narbonne — vos idées en image.</h1>
+      <h1 id="heroTitle">Vidéaste à Narbonne pour entreprises, artistes et événements.</h1>
       <p id="heroSubtitle">Studio audiovisuel indépendant en Occitanie</p>
-      <p id="heroDescription" class="hero-description"></p>
+      <p id="heroDescription" class="hero-description">Tournage, montage et post-production : je transforme votre idée en une vidéo claire, soignée et prête à être diffusée.</p>
       <div class="hero-ctas">
-        <a href="#contact" class="btn-primary" id="heroCta1">Demander un devis</a>
+        <a href="#contact" class="btn-primary" id="heroCta1">Parler de votre projet</a>
         <a href="#portfolio" class="btn-secondary" id="heroCta2">Voir le portfolio</a>
       </div>
     </div>
@@ -74,28 +74,46 @@
     </div>
   </section>
 
-  <!-- ABOUT -->
-  <section id="about" class="section section-light">
-    <div class="container">
-      <div class="about-grid reveal">
-        <div class="about-image">
-          <img src="/images/armel-dali-le-stud.png" alt="Armel Dali, fondateur du studio audiovisuel Le Stud à Narbonne, Occitanie" />
-        </div>
-        <div class="about-text">
-          <h2 class="section-title left" id="aboutTitle">À propos</h2>
-          <div id="aboutParagraphs"></div>
-          <ul class="about-caps" id="aboutCaps"></ul>
-        </div>
-      </div>
+  <aside class="trust-strip" aria-label="Repères sur Le Stud">
+    <div class="container trust-strip-inner">
+      <span><strong>Depuis 2017</strong> dans l'audiovisuel</span>
+      <span><strong>Studio à Narbonne</strong> fonds blanc, noir et vert</span>
+      <span><strong>Réponse sous 48 h</strong> devis gratuit</span>
+      <span><strong>Occitanie</strong> tournage sur place</span>
     </div>
-  </section>
+  </aside>
 
   <!-- SERVICES -->
   <section id="services" class="section section-dark">
     <div class="container">
-      <h2 class="section-title reveal" id="servicesTitle">Ce que je fais</h2>
-      <p class="section-subtitle reveal" id="servicesSubtitle">Du tournage au montage, je vous aide à créer des images claires, soignées et adaptées à votre projet.</p>
+      <h2 class="section-title left reveal" id="servicesTitle">Ce que je fais</h2>
+      <p class="section-subtitle left reveal" id="servicesSubtitle">Du tournage au montage, je vous aide à créer des images claires, soignées et adaptées à votre projet.</p>
       <ol class="services-list reveal-stagger" id="servicesList"></ol>
+    </div>
+  </section>
+
+  <!-- PORTFOLIO -->
+  <section id="portfolio" class="section section-dark">
+    <div class="container">
+      <h2 class="section-title left reveal">Quelques réalisations</h2>
+      <p class="section-subtitle left reveal">Une sélection de projets réalisés depuis 2017. Certains restent confidentiels ou partiellement affichés selon les autorisations des clients et collaborateurs.</p>
+
+      <!-- Catégorie Vidéo -->
+      <div class="portfolio-category reveal" id="categoryVideo">
+        <h3 class="category-title">Vidéo</h3>
+        <!-- Réalisation principale -->
+        <div id="videoFeatured"></div>
+        <div class="portfolio-grid-mini portfolio-grid-visible" id="videoGrid"></div>
+      </div>
+
+      <!-- Catégorie Graphisme -->
+      <div class="portfolio-category reveal" id="categoryGraphisme">
+        <h3 class="category-title">Graphisme</h3>
+        <!-- Encart principal : mosaïque fixe — remplacer par image générique quand disponible -->
+        <div id="graphismeFeatured"></div>
+        <div class="portfolio-grid-mini portfolio-grid-visible" id="graphismeGrid"></div>
+      </div>
+
     </div>
   </section>
 
@@ -111,38 +129,19 @@
   <!-- PARALLAX SEPARATOR 1 -->
   <div class="parallax parallax-sep" style="background-image: url('./images/paysage-occitanie-le-stud.jpg');"></div>
 
-  <!-- PORTFOLIO -->
-  <section id="portfolio" class="section section-dark">
+  <!-- ABOUT -->
+  <section id="about" class="section section-light">
     <div class="container">
-      <h2 class="section-title left reveal">Quelques réalisations</h2>
-      <p class="section-subtitle left reveal">Une sélection de projets réalisés depuis 2017. Certains restent confidentiels ou partiellement affichés selon les autorisations des clients et collaborateurs.</p>
-
-      <!-- Catégorie Vidéo -->
-      <div class="portfolio-category reveal" id="categoryVideo">
-        <h3 class="category-title">Vidéo</h3>
-        <!-- Encart principal : 1 projet vidéo aléatoire au chargement -->
-        <div id="videoFeatured"></div>
-        <div class="portfolio-accordion">
-          <button class="accordion-btn" aria-expanded="false" data-target="videoMore">Voir plus</button>
-          <div class="accordion-panel" id="videoMore" hidden>
-            <div class="portfolio-grid-mini" id="videoGrid"></div>
-          </div>
+      <div class="about-grid reveal">
+        <div class="about-image">
+          <img src="/images/armel-dali-le-stud.png" alt="Armel Dali, fondateur du studio audiovisuel Le Stud à Narbonne, Occitanie" loading="lazy" />
+        </div>
+        <div class="about-text">
+          <h2 class="section-title left" id="aboutTitle">À propos</h2>
+          <div id="aboutParagraphs"></div>
+          <ul class="about-caps" id="aboutCaps"></ul>
         </div>
       </div>
-
-      <!-- Catégorie Graphisme -->
-      <div class="portfolio-category reveal" id="categoryGraphisme">
-        <h3 class="category-title">Graphisme</h3>
-        <!-- Encart principal : mosaïque fixe — remplacer par image générique quand disponible -->
-        <div id="graphismeFeatured"></div>
-        <div class="portfolio-accordion">
-          <button class="accordion-btn" aria-expanded="false" data-target="graphismeMore">Voir plus</button>
-          <div class="accordion-panel" id="graphismeMore" hidden>
-            <div class="portfolio-grid-mini" id="graphismeGrid"></div>
-          </div>
-        </div>
-      </div>
-
     </div>
   </section>
 
@@ -211,11 +210,12 @@
             <textarea id="message" name="message" rows="5" placeholder="Décrivez votre idée, votre contexte, ce que vous cherchez à obtenir…" required></textarea>
           </div>
           <button type="submit" class="btn-primary">Envoyer</button>
+          <p class="form-privacy">Le formulaire prépare un email dans votre messagerie. Aucune donnée n'est enregistrée sur ce site. <a href="/confidentialite/">En savoir plus</a>.</p>
         </form>
         <div class="contact-info">
           <div class="contact-item">
             <strong>Email</strong>
-            <p class="contact-email" id="contactEmail">armeldali.pro@gmail.com</p>
+            <a class="contact-email" id="contactEmail" href="mailto:armeldali.pro@gmail.com">armeldali.pro@gmail.com</a>
           </div>
           <div class="contact-item">
             <strong>Adresse</strong>
@@ -227,7 +227,7 @@
           </div>
           <div class="contact-item">
             <strong>Structure</strong>
-            <p>Micro-entreprise<br/><span id="contactSiret">N° 524 497 021</span></p>
+            <p>Entreprise individuelle<br/><span id="contactSiren">SIREN 524 497 021</span></p>
           </div>
         </div>
       </div>
@@ -275,13 +275,14 @@
       <div class="footer-content">
         <span class="footer-logo">Le Stud</span>
         <p id="footerCopyright">© 2026 Le Stud — Studio vidéo & photo en Occitanie. Tous droits réservés.</p>
-        <p class="footer-mention"><a href="mailto:armeldali.pro@gmail.com">Contact</a> · Mentions légales disponibles sur demande</p>
+        <p class="footer-mention"><a href="mailto:armeldali.pro@gmail.com">Contact</a> · <a href="/mentions-legales/">Mentions légales</a> · <a href="/confidentialite/">Confidentialité</a></p>
       </div>
       <nav class="footer-local" aria-label="Pages locales">
         <div class="footer-local-col">
           <strong>Narbonne</strong>
           <a href="/videaste-narbonne/">Vidéaste à Narbonne</a>
           <a href="/video-entreprise-narbonne/">Vidéo d'entreprise</a>
+          <a href="/clip-musical-narbonne/">Clip musical</a>
           <a href="/captation-evenement-narbonne/">Captation événement</a>
           <a href="/montage-video-narbonne/">Montage vidéo</a>
           <a href="/contenu-reseaux-sociaux-narbonne/">Contenus réseaux sociaux</a>
@@ -351,7 +352,6 @@
     ]
   }
   </script>
-  <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
   <script src="script.js"></script>
 </body>
 </html>
