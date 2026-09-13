@@ -2,7 +2,7 @@
 
 Site vitrine du studio audiovisuel Le Stud, basé à Narbonne (Occitanie).
 Stack : HTML / CSS (OKLCH) / JS vanilla + Decap CMS.
-Déployé sur Cloudflare Workers : [lestudpro.fr](https://www.lestudpro.fr)
+Hébergé sur Netlify : [lestudpro.fr](https://www.lestudpro.fr)
 
 ---
 
@@ -31,8 +31,8 @@ lestud-site/
 
 Chaque clé correspond à une section :
 - `hero` : eyebrow, titre, sous-titre, description, CTAs
-- `services` : titre, sous-titre, liste des 6 services et liens vers les pages détaillées
-- `packs` : titre, 3 formules, contenu inclus et note bas de page
+- `services` : titre, sous-titre, liste des 6 services
+- `packs` : titre, 3 formules, note bas de page
 - `about` : titre, paragraphes, highlights de compétences
 - `contact` : titre, sous-titre, email, adresse, SIRET
 - `footer` : copyright
@@ -53,7 +53,7 @@ Chaque clé correspond à une section :
 ## Portfolio — structure et catégories
 
 Le portfolio est découpé en deux catégories : **Vidéo** et **Graphisme**.
-Chaque catégorie montre un encart principal puis les réalisations disponibles, sans clic intermédiaire.
+Chaque catégorie a un encart principal et un accordéon "Voir plus".
 
 ### Fichier de données
 → `data/portfolio.json`
@@ -83,9 +83,17 @@ Même procédure avec `"category": "graphisme"`.
 
 ---
 
-## Encart principal Vidéo
+## Encart principal Vidéo — tirage aléatoire
 
-Le premier projet vidéo de `data/portfolio.json` sert de réalisation principale. Les projets suivants sont affichés juste en dessous. L'ordre du fichier définit donc la hiérarchie visible du portfolio.
+À chaque chargement de page, **un projet vidéo est tiré au hasard** parmi tous les items `category: "video"` et affiché dans l'encart principal.
+
+Le tirage se fait dans `script.js` :
+```js
+const featuredVideo = videoItems[Math.floor(Math.random() * videoItems.length)];
+```
+
+Le projet change uniquement au rechargement. Il ne change pas pendant la navigation.
+L'accordéon "Voir plus" affiche **tous** les projets vidéo (y compris celui de l'encart).
 
 ---
 
@@ -133,7 +141,7 @@ Pour toute analyse approfondie (performances, SEO, accessibilité, erreurs JS), 
 quel outil est nécessaire :
 
 - **Dépôt GitHub** (compte kMessa, repo `lestud-site`) : code source, historique git
-- **Copie locale du dépôt** : accès direct aux fichiers
+- **Fichiers locaux** (`/Users/armeldali/lestud-site/`) : accès direct aux fichiers
 - **Navigateur** (DevTools, console) : erreurs JS, rendu visuel, réseau
 - **Lighthouse** : audit performances, SEO, accessibilité
 - **Netlify dashboard** : logs de déploiement, analytics, redirections

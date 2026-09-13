@@ -37,10 +37,7 @@ Promise.all([
     li.className = 'service-item';
     li.innerHTML = `
       <span class="service-num">${item.num}</span>
-      <div class="service-heading">
-        <h3>${item.title}</h3>
-        ${item.url ? `<a class="service-link" href="${item.url}">Découvrir <span aria-hidden="true">→</span></a>` : ''}
-      </div>
+      <h3>${item.title}</h3>
       <p>${item.description}</p>`;
     servicesList.appendChild(li);
   });
@@ -57,9 +54,7 @@ Promise.all([
       <span class="pack-icon" aria-hidden="true">${packIcons[i] || ''}</span>
       <h3>${item.title}</h3>
       ${item.price ? `<p class="pack-price">${item.price}</p>` : ''}
-      <p>${item.description}</p>
-      ${item.includes ? `<ul class="pack-includes">${item.includes.map(detail => `<li>${detail}</li>`).join('')}</ul>` : ''}
-      <a class="pack-link" href="#contact">Demander un devis <span aria-hidden="true">→</span></a>`;
+      <p>${item.description}</p>`;
     packsGrid.appendChild(div);
   });
 
@@ -84,9 +79,8 @@ Promise.all([
   document.getElementById('contactTitle').textContent    = c.title;
   document.getElementById('contactSubtitle').textContent = c.subtitle;
   document.getElementById('contactEmail').textContent    = c.email;
-  document.getElementById('contactEmail').href           = 'mailto:' + c.email;
   document.getElementById('contactAddress').textContent  = c.address;
-  document.getElementById('contactSiren').textContent    = 'SIREN ' + c.siren;
+  document.getElementById('contactSiret').textContent    = 'N° ' + c.siret;
 
   // ── Footer ────────────────────────────────────────────────────────────
   document.getElementById('footerCopyright').textContent = content.footer.copyright;
@@ -94,6 +88,17 @@ Promise.all([
   // ── Portfolio ─────────────────────────────────────────────────────────────
   const videoItems     = portfolio.items.filter(i => i.category === 'video');
   const graphismeItems = portfolio.items.filter(i => i.category === 'graphisme');
+
+  const shuffle = arr => {
+    const a = [...arr];
+    for (let i = a.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [a[i], a[j]] = [a[j], a[i]];
+    }
+    return a;
+  };
+
+  const shuffledVideos = shuffle(videoItems);
 
   // Crée une carte <a> cliquable, iOS-safe
   function makeCard(item) {
@@ -117,7 +122,7 @@ Promise.all([
 
   // ── Vidéo featured (desktop) ──────────────────────────────────────────────
   const videoFeaturedEl = document.getElementById('videoFeatured');
-  const feat = videoItems[0];
+  const feat = shuffledVideos[0];
   const featCard = document.createElement('a');
   featCard.className = 'portfolio-featured-card' + (feat.link ? ' portfolio-item--linked' : '');
   if (feat.link) { featCard.href = feat.link; featCard.target = '_blank'; featCard.rel = 'noopener noreferrer'; }
@@ -132,10 +137,22 @@ Promise.all([
     '</div>';
   videoFeaturedEl.appendChild(featCard);
 
-  // ── Autres vidéos visibles immédiatement ───────────────────────────────────
-  const otherVideos = videoItems.slice(1);
+  // Mobile : 3 cartes aléatoires (remplace la featured card)
+  const mobileVidGrid = document.createElement('div');
+  mobileVidGrid.className = 'portfolio-grid-mini portfolio-mobile-video';
+  shuffledVideos.slice(0, 3).forEach(item => mobileVidGrid.appendChild(makeCard(item)));
+  videoFeaturedEl.appendChild(mobileVidGrid);
+
+  // ── Vidéo accordéon — exclut les vidéos déjà affichées ──────────────────────
+  const shownCount     = window.innerWidth <= 768 ? 3 : 1;
+  const accordionVideos = shuffledVideos.slice(shownCount);
   const videoGrid = document.getElementById('videoGrid');
-  otherVideos.forEach(item => videoGrid.appendChild(makeCard(item)));
+  if (accordionVideos.length === 0) {
+    const acc = document.querySelector('#categoryVideo .portfolio-accordion');
+    if (acc) acc.style.display = 'none';
+  } else {
+    accordionVideos.forEach(item => videoGrid.appendChild(makeCard(item)));
+  }
 
   // ── Graphisme featured — illustration ─────────────────────────────────────
   const graphismeFeaturedEl = document.getElementById('graphismeFeatured');
@@ -172,6 +189,17 @@ Promise.all([
 
 }).catch(err => console.error('Erreur chargement contenu :', err));
 
+// Netlify Identity — redirige vers /admin après connexion
+if (window.netlifyIdentity) {
+  window.netlifyIdentity.on('init', user => {
+    if (!user) {
+      window.netlifyIdentity.on('login', () => {
+        document.location.href = '/admin/';
+      });
+    }
+  });
+}
+
 // ── Navbar scroll state ────────────────────────────────────────────────
 const navbar = document.getElementById('navbar');
 window.addEventListener('scroll', () => {
@@ -183,15 +211,11 @@ const navToggle = document.getElementById('navToggle');
 const navLinks  = document.getElementById('navLinks');
 
 navToggle.addEventListener('click', () => {
-  const isOpen = navLinks.classList.toggle('open');
-  navToggle.setAttribute('aria-expanded', String(isOpen));
+  navLinks.classList.toggle('open');
 });
 
 navLinks.querySelectorAll('a').forEach(link => {
-  link.addEventListener('click', () => {
-    navLinks.classList.remove('open');
-    navToggle.setAttribute('aria-expanded', 'false');
-  });
+  link.addEventListener('click', () => navLinks.classList.remove('open'));
 });
 
 // ── Active section nav indicator ──────────────────────────────────────
@@ -223,6 +247,18 @@ const revealObserver = new IntersectionObserver((entries) => {
 
 document.querySelectorAll('.reveal, .reveal-stagger').forEach(el => {
   revealObserver.observe(el);
+});
+
+// ── Accordéons portfolio ───────────────────────────────────────────────
+document.addEventListener('click', e => {
+  const btn = e.target.closest('.accordion-btn');
+  if (!btn) return;
+  const panel  = document.getElementById(btn.dataset.target);
+  if (!panel) return;
+  const isOpen = btn.getAttribute('aria-expanded') === 'true';
+  btn.setAttribute('aria-expanded', String(!isOpen));
+  btn.textContent = isOpen ? 'Voir plus' : 'Voir moins';
+  panel.hidden = isOpen;
 });
 
 // ── Protection images uniquement ──────────────────────────────────────
@@ -291,7 +327,8 @@ function sendForm(e) {
   window.location.href = `mailto:armeldali.pro@gmail.com?subject=${subject}&body=${body}`;
 
   setTimeout(() => {
-    btn.textContent = 'Email préparé';
+    btn.textContent = 'Demande envoyée';
+    form.reset();
     setTimeout(() => {
       btn.textContent = 'Envoyer';
       btn.disabled = false;
