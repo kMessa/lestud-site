@@ -1,10 +1,10 @@
 {
   "hero": {
     "eyebrow": "LE STUD",
-    "title": "Vidéaste à Narbonne pour entreprises, artistes et événements.",
+    "title": "Studio vidéo à Narbonne — vos idées en image.",
     "subtitle": "Studio audiovisuel indépendant en Occitanie",
-    "description": "Tournage, montage et post-production : je transforme votre idée en une vidéo claire, soignée et prête à être diffusée.",
-    "cta_primary": "Parler de votre projet",
+    "description": "Vidéo, montage, photo, clips, événements et contenus courts pour les artistes, entreprises, associations et indépendants qui veulent mieux présenter leur projet.",
+    "cta_primary": "Demander un devis",
     "cta_secondary": "Voir le portfolio"
   },
   "services": {
@@ -14,38 +14,32 @@
       {
         "num": "01",
         "title": "Vidéo d'entreprise",
-        "description": "Présentez votre activité, votre équipe, votre lieu ou votre savoir-faire avec une vidéo claire, professionnelle et adaptée à vos supports.",
-        "url": "/video-entreprise-narbonne/"
+        "description": "Présentez votre activité, votre équipe, votre lieu ou votre savoir-faire avec une vidéo claire, professionnelle et adaptée à vos supports."
       },
       {
         "num": "02",
         "title": "Clips & projets artistiques",
-        "description": "Clip musical, vidéo créative, teaser ou projet personnel : je vous accompagne dans la création d'images fortes, avec une vraie attention au rythme, au montage et à l'ambiance.",
-        "url": "/clip-musical-narbonne/"
+        "description": "Clip musical, vidéo créative, teaser ou projet personnel : je vous accompagne dans la création d'images fortes, avec une vraie attention au rythme, au montage et à l'ambiance."
       },
       {
         "num": "03",
         "title": "Montage vidéo",
-        "description": "Vous avez déjà des images ? Je peux les organiser, les rythmer, les nettoyer et leur donner une vraie forme grâce au montage, à l'étalonnage et à l'habillage.",
-        "url": "/montage-video-narbonne/"
+        "description": "Vous avez déjà des images ? Je peux les organiser, les rythmer, les nettoyer et leur donner une vraie forme grâce au montage, à l'étalonnage et à l'habillage."
       },
       {
         "num": "04",
         "title": "Contenus réseaux sociaux",
-        "description": "Teasers, formats courts, reels, vidéos verticales, extraits dynamiques : je crée des contenus pensés pour capter l'attention sans sacrifier la qualité de l'image.",
-        "url": "/contenu-reseaux-sociaux-narbonne/"
+        "description": "Teasers, formats courts, reels, vidéos verticales, extraits dynamiques : je crée des contenus pensés pour capter l'attention sans sacrifier la qualité de l'image."
       },
       {
         "num": "05",
         "title": "Événements",
-        "description": "Captation vidéo et photo pour garder une trace propre d'un événement : concert, exposition, rencontre, inauguration, tournoi, soirée ou moment important.",
-        "url": "/captation-evenement-narbonne/"
+        "description": "Captation vidéo et photo pour garder une trace propre d'un événement : concert, exposition, rencontre, inauguration, tournoi, soirée ou moment important."
       },
       {
         "num": "06",
         "title": "Identité visuelle simple",
-        "description": "Logo, carte de visite, visuel promotionnel ou jaquette : je peux aussi vous aider à poser une première identité visuelle claire et cohérente.",
-        "url": "/#categoryGraphisme"
+        "description": "Logo, carte de visite, visuel promotionnel ou jaquette : je peux aussi vous aider à poser une première identité visuelle claire et cohérente."
       }
     ]
   },
@@ -55,35 +49,17 @@
       {
         "title": "Pack Essentiel",
         "price": "À partir de 390 €",
-        "description": "Pour présenter une activité simplement avec une vidéo courte et directement utilisable.",
-        "includes": [
-          "Cadrage du besoin avant le tournage",
-          "Tournage ciblé à Narbonne",
-          "Montage et traitement de l'image",
-          "Livraison HD dans un format principal"
-        ]
+        "description": "Pour présenter une activité simplement : une vidéo courte, soignée, directement utilisable sur vos supports."
       },
       {
         "title": "Pack Réseaux Sociaux",
         "price": "À partir de 490 €",
-        "description": "Pour produire plusieurs contenus courts à partir d'une même session.",
-        "includes": [
-          "Préparation d'une session de contenus",
-          "Tournage pensé pour les formats courts",
-          "Montage vertical pour les réseaux",
-          "Quantité et sous-titres précisés au devis"
-        ]
+        "description": "Pour créer plusieurs contenus courts à partir d'une même session : reels, teasers, formats verticaux."
       },
       {
         "title": "Pack Projet Complet",
         "price": "À partir de 790 €",
-        "description": "Pour un clip, une vidéo d'entreprise, une interview ou un événement plus construit.",
-        "includes": [
-          "Préparation et fil directeur",
-          "Tournage avec le matériel du studio",
-          "Montage, son et étalonnage",
-          "Livrables, retours et délai inscrits au devis"
-        ]
+        "description": "Pour un clip, une vidéo d'entreprise, une interview ou un événement plus construit, du tournage à la livraison finale."
       }
     ],
     "note": "Les tarifs sont donnés à titre indicatif. Chaque projet fait l'objet d'un devis personnalisé selon la durée du tournage, le montage, les déplacements, les formats à livrer et le niveau de finition souhaité."
@@ -111,7 +87,7 @@
     "subtitle": "Vous avez un projet vidéo, photo ou visuel ? Présentez-moi votre idée, même si elle n'est pas encore complètement définie. Je vous répondrai avec une première orientation claire : format possible, méthode, délai et estimation.",
     "email": "armeldali.pro@gmail.com",
     "address": "Narbonne, Occitanie",
-    "siren": "524 497 021"
+    "siret": "524 497 021"
   },
   "footer": {
     "copyright": "© 2026 Le Stud — Studio vidéo & photo en Occitanie. Tous droits réservés."
