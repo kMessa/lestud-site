@@ -32,6 +32,14 @@ Promise.all([
   document.getElementById('servicesTitle').textContent    = s.title;
   document.getElementById('servicesSubtitle').textContent = s.subtitle;
   const servicesList = document.getElementById('servicesList');
+  // Conserver les liens du HTML initial lors de la mise à jour depuis le CMS.
+  const serviceUrls = new Map(
+    [...servicesList.querySelectorAll('.service-item')].map(li => [
+      li.querySelector('.service-num').textContent.trim(),
+      li.querySelector('h3 a')?.getAttribute('href')
+    ])
+  );
+  servicesList.replaceChildren();
   s.items.forEach(item => {
     const li = document.createElement('li');
     li.className = 'service-item';
@@ -39,6 +47,13 @@ Promise.all([
       <span class="service-num">${item.num}</span>
       <h3>${item.title}</h3>
       <p>${item.description}</p>`;
+    const url = serviceUrls.get(item.num);
+    if (url) {
+      const link = document.createElement('a');
+      link.href = url;
+      link.textContent = item.title;
+      li.querySelector('h3').replaceChildren(link);
+    }
     servicesList.appendChild(li);
   });
 
