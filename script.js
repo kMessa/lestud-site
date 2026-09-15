@@ -62,6 +62,7 @@ Promise.all([
   document.getElementById('packsTitle').textContent = pk.title;
   document.getElementById('packsNote').textContent  = pk.note;
   const packsGrid = document.getElementById('packsGrid');
+  packsGrid.replaceChildren();
   pk.items.forEach((item, i) => {
     const div = document.createElement('div');
     div.className = 'pack-item';
@@ -77,12 +78,14 @@ Promise.all([
   const a = content.about;
   document.getElementById('aboutTitle').textContent = a.title;
   const aboutParagraphs = document.getElementById('aboutParagraphs');
+  aboutParagraphs.replaceChildren();
   a.paragraphs.forEach(text => {
     const p = document.createElement('p');
     p.textContent = text;
     aboutParagraphs.appendChild(p);
   });
   const aboutCaps = document.getElementById('aboutCaps');
+  aboutCaps.replaceChildren();
   a.capabilities.forEach(cap => {
     const li = document.createElement('li');
     li.innerHTML = `<strong>${cap.highlight}</strong> ${cap.text}`;
